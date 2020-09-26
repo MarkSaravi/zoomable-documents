@@ -1,3 +1,6 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
+// eslint-disable-next-line no-use-before-define
 import React from 'react';
 import { render } from '@testing-library/react';
 // eslint-disable-next-line import/extensions

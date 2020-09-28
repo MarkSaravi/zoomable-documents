@@ -19,7 +19,7 @@ return (
       type="button"
       value="zoom in"
       onClick={() => {
-        if (zoomLevel < 10) {
+        if (zoomLevel < 1) {
           setZoomLevel(zoomLevel + 1);
         }
       }}
@@ -33,7 +33,7 @@ return (
         }
       }}
     />
-    <p>Zoomable Article {content.toString(zoomLevel)}</p>
+    <p>{content.toString(zoomLevel)}</p>
   </>
 );
 };

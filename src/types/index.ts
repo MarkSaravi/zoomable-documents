@@ -11,7 +11,7 @@ type LevelPosition = {
   isEndOfLine: boolean;
 };
 
-type Sentence = {
+export type Sentence = {
   id: SentenceId;
   positions: Array<LevelPosition>;
   content: string;
@@ -23,6 +23,6 @@ export type ZoomableSentences = {
 };
 
 export interface ZoomableContent {
-  sentences: ZoomableSentences;
+  zoomableSentences: ZoomableSentences;
   toString: (zoomLevel: number) => string;
 }

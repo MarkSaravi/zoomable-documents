@@ -5,6 +5,7 @@
 import React from "react";
 import { Zoomable } from "./Zoomable";
 import { ZoomableArticleView } from '../ZoomableArticle';
+import { FIRST_SENTENCE_ID } from '../../constants';
 import { ZoomableSentences } from "../../types";
 
 const LEVEL0 = 'l0';
@@ -27,7 +28,7 @@ const zoomableSentences: ZoomableSentences = {
         {
           levelId: LEVEL0,
           isVisible: true,
-          after: '',
+          after: FIRST_SENTENCE_ID,
           isEndOfLine: false,
         },
         {
@@ -81,7 +82,7 @@ const zoomableSentences: ZoomableSentences = {
         {
           levelId: LEVEL1,
           isVisible: true,
-          after: '',
+          after: FIRST_SENTENCE_ID,
           isEndOfLine: false,
         },
       ],

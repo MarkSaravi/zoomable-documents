@@ -33,7 +33,7 @@ return (
         }
       }}
     />
-    <p>{content.toString(zoomLevel)}</p>
+    <p style={{ textAlign: "left" }}>{content.toString(zoomLevel)}</p>
   </>
 );
 };

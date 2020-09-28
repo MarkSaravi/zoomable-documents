@@ -1,7 +1,7 @@
 /* eslint-disable no-empty-function */
 /* eslint-disable import/extensions */
 /* eslint-disable class-methods-use-this */
-import { FIRST_SENTENCE_ID } from '../../constants';
+// import { FIRST_SENTENCE_ID } from '../../constants';
 import type { Sentence, ZoomableSentences, ZoomableContent } from "../../types";
 
 class Zoomable implements ZoomableContent {
@@ -10,43 +10,20 @@ class Zoomable implements ZoomableContent {
   toString(zoomLevel: number): string {
     const { levels, sentences } = this.zoomableSentences;
     const levelId = levels[zoomLevel];
-    const levelSentences: Array<Sentence> = [];
+    const levelSentences: {[After: string]: Sentence} = {};
     sentences.forEach(sentence => {
-        sentence.positions.forEach(position => {
-            if (position.levelId === levelId) {
-                levelSentences.push(sentence);
-            }
-        });
-    });
-
-    const contentSentences: Array<Sentence> = [];
-    let afterId = FIRST_SENTENCE_ID;
-    const numLoops = levelSentences.length;
-    for (let i = 0; i < numLoops; i++) {
-        for (let j = 0; j < levelSentences.length; j++) {
-            const { positions } = levelSentences[j];
-            let found = false;
-            // eslint-disable-next-line no-loop-func
-            positions.forEach(position => {
-                if (position.levelId === levelId && position.after === afterId) {
-                    found = true;
-                    const { id } = levelSentences[j];
-                    afterId = id;
-                }
-            });
-            if (found) {
-                contentSentences.push(levelSentences[j]);
-                break;
-            }
+        if (sentence.positions[levelId]) {
+          levelSentences[sentence.positions[levelId].after] = sentence;
         }
-    }
-
-    let str = '';
-    contentSentences.forEach(sentence => {
-        str += `${sentence.content}, `;
     });
-
-    return str;
+    const afterIds = Object.keys(levelSentences);
+    let content = '';
+    let afterId = '';
+    for (let i = 0; i < afterIds.length; i++) {
+        content += `${levelSentences[afterId].content}${i === afterIds.length - 1 ? '' : '. '}`;
+        afterId = levelSentences[afterId].id;
+    }
+    return content;
   }
 }
 

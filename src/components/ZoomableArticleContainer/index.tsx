@@ -24,116 +24,94 @@ const zoomableSentences: ZoomableSentences = {
   sentences: [
     {
       id: SENTENCE00,
-      positions: [
-        {
+      positions: {
+        [LEVEL0]: {
           levelId: LEVEL0,
-          isVisible: true,
           after: FIRST_SENTENCE_ID,
-          isEndOfLine: false,
         },
-        {
+        [LEVEL1]: {
           levelId: LEVEL1,
-          isVisible: true,
           after: SENTENCE03,
-          isEndOfLine: false,
         },
-      ],
+      },
       content: 'This is sentence 00',
     },
     {
       id: SENTENCE01,
-      positions: [
-        {
+      positions: {
+        [LEVEL0]: {
           levelId: LEVEL0,
-          isVisible: true,
           after: SENTENCE00,
-          isEndOfLine: false,
         },
-        {
+        [LEVEL1]: {
           levelId: LEVEL1,
-          isVisible: true,
           after: SENTENCE04,
-          isEndOfLine: false,
         },
-      ],
+      },
       content: 'This is sentence 01',
     },
     {
       id: SENTENCE02,
-      positions: [
-        {
+      positions: {
+        [LEVEL0]: {
           levelId: LEVEL0,
-          isVisible: true,
           after: SENTENCE01,
-          isEndOfLine: true,
         },
-        {
+        [LEVEL1]: {
           levelId: LEVEL1,
-          isVisible: true,
           after: SENTENCE05,
-          isEndOfLine: false,
         },
-      ],
+      },
       content: 'This is sentence 02',
     },
     {
       id: SENTENCE03,
-      positions: [
-        {
+      positions: {
+        [LEVEL1]: {
           levelId: LEVEL1,
-          isVisible: true,
           after: FIRST_SENTENCE_ID,
-          isEndOfLine: false,
         },
-      ],
+      },
       content: 'This is sentence 03',
     },
     {
       id: SENTENCE04,
-      positions: [
-        {
+      positions: {
+        [LEVEL1]: {
           levelId: LEVEL1,
-          isVisible: true,
           after: SENTENCE00,
-          isEndOfLine: false,
         },
-      ],
+      },
       content: 'This is sentence 04',
     },
     {
       id: SENTENCE05,
-      positions: [
-        {
+      positions: {
+        [LEVEL1]: {
           levelId: LEVEL1,
-          isVisible: true,
           after: SENTENCE01,
-          isEndOfLine: false,
         },
-      ],
+      },
       content: 'This is sentence 05',
     },
     {
       id: SENTENCE06,
-      positions: [
-        {
+      positions: {
+        [LEVEL1]: {
           levelId: LEVEL1,
-          isVisible: true,
           after: SENTENCE02,
-          isEndOfLine: false,
         },
-      ],
+      },
       content: 'This is sentence 06',
     },
     {
       id: SENTENCE07,
-      positions: [
-        {
+      positions: {
+        [LEVEL1]: {
           levelId: LEVEL1,
-          isVisible: true,
           after: SENTENCE06,
-          isEndOfLine: true,
         },
-      ],
+      },
       content: 'This is sentence 07',
     },
   ],
@@ -143,7 +121,9 @@ const ZoomableArticleContainer: React.FC = () => {
     const zoomable = new Zoomable(zoomableSentences);
   return (
     <>
-      <ZoomableArticleView content={zoomable} />
+      <div style={{ width: "480px", margin: "48px", textIndent: '24px' }}>
+        <ZoomableArticleView content={zoomable} />
+      </div>
     </>
   );
 };

@@ -6,14 +6,12 @@ type After = SentenceId;
 
 type LevelPosition = {
   levelId: LevelId;
-  isVisible: boolean;
   after: After;
-  isEndOfLine: boolean;
 };
 
 export type Sentence = {
   id: SentenceId;
-  positions: Array<LevelPosition>;
+  positions: { [LevelId: string]: LevelPosition };
   content: string;
 };
 

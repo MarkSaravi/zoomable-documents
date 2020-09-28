@@ -3,12 +3,12 @@
 /* eslint-disable no-use-before-define */
 import React from "react";
 import "./App.css";
-import { ZoomableArticleView } from "./components/ZoomableArticle";
+import { ZoomableArticleContainer } from "./components/ZoomableArticleContainer";
 
 function App() {
   return (
     <div className="App">
-      <ZoomableArticleView />
+      <ZoomableArticleContainer />
     </div>
   );
 }

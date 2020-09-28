@@ -10,14 +10,19 @@ type LevelPosition = {
   after: After;
   isEndOfLine: boolean;
   // eslint-disable-next-line no-use-before-define
-  zoom: ZoomableDocument | null;
+  zoom: ZoomableSentences | null;
 };
 
 type Sentence = {
   positions: Array<LevelPosition>;
 };
 
-export type ZoomableDocument = {
+export type ZoomableSentences = {
   levels: Array<LevelId>;
   sentences: Array<Sentence>;
 };
+
+export interface ZoomableContent {
+  sentences: ZoomableSentences;
+  toString: (zoomLevel: number) => string;
+}

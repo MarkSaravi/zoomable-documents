@@ -9,12 +9,12 @@ type LevelPosition = {
   isVisible: boolean;
   after: After;
   isEndOfLine: boolean;
-  // eslint-disable-next-line no-use-before-define
-  zoom: ZoomableSentences | null;
 };
 
 type Sentence = {
+  id: SentenceId;
   positions: Array<LevelPosition>;
+  content: string;
 };
 
 export type ZoomableSentences = {

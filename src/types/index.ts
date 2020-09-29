@@ -1,4 +1,4 @@
-type LevelId = string;
+type LevelId = number;
 
 type SentenceId = string;
 
@@ -11,16 +11,11 @@ type LevelPosition = {
 
 export type Sentence = {
   id: SentenceId;
-  positions: { [LevelId: string]: LevelPosition };
+  positions: { [LevelId: number]: LevelPosition };
   content: string;
 };
 
-export type ZoomableSentences = {
-  levels: Array<LevelId>;
-  sentences: Array<Sentence>;
-};
-
 export interface ZoomableContent {
-  zoomableSentences: ZoomableSentences;
+  sentences: Array<Sentence>;
   toString: (zoomLevel: number) => string;
 }

@@ -6,7 +6,7 @@ import React from "react";
 import { Zoomable } from "./Zoomable";
 import { ZoomableArticleView } from '../ZoomableArticle';
 import { FIRST_SENTENCE_ID } from '../../constants';
-import { Sentence } from "../../types";
+import { Sentence } from "../../zoomable-content/types";
 
 const SENTENCE00 = 'sentence00';
 const SENTENCE01 = 'sentence01';

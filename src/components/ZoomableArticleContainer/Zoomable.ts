@@ -3,7 +3,7 @@
 /* eslint-disable class-methods-use-this */
 // import { FIRST_SENTENCE_ID } from '../../constants';
 import type { Sentence, ZoomableContent } from "../../zoomable-content/types";
-import { getSentencesByZoomLevel } from '../../zoomable-content/utils';
+import { getSentencesByZoomLevel, getOrderedSentenceKeys } from "../../zoomable-content/utils";
 
 class Zoomable implements ZoomableContent {
   constructor(readonly sentences: Array<Sentence>) {}
@@ -11,12 +11,11 @@ class Zoomable implements ZoomableContent {
   toString(zoomLevel: number): string {
     const levelSentences = getSentencesByZoomLevel(this.sentences, zoomLevel);
     const afterIds = Object.keys(levelSentences);
+    const orderedKeys = getOrderedSentenceKeys(levelSentences);
     let content = "";
-    let afterId = "";
-    for (let i = 0; i < afterIds.length; i++) {
-      content += `${levelSentences[afterId].content}${i === afterIds.length - 1 ? "" : ". "}`;
-      afterId = levelSentences[afterId].id;
-    }
+    orderedKeys.forEach((id, i) => {
+      content += `${levelSentences[id].content}${i === afterIds.length - 1 ? "" : ". "}`;
+    });
     return content;
   }
 }

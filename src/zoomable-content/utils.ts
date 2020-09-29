@@ -12,4 +12,17 @@ function getSentencesByZoomLevel(sentences: Array<Sentence>, zoomLevel: number) 
         return levelSentences;
 }
 
-export { getSentencesByZoomLevel };
+function getOrderedSentenceKeys(
+    levelSentences: { [After: string]: Sentence }
+    ): Array<string> {
+    const orderedIds = [];
+    const afterIds = Object.keys(levelSentences);
+    let afterId = "";
+    for (let i = 0; i < afterIds.length; i++) {
+        orderedIds.push(afterId);
+        afterId = levelSentences[afterId].id;
+    }
+    return orderedIds;
+}
+
+export { getSentencesByZoomLevel, getOrderedSentenceKeys };

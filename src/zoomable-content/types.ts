@@ -15,7 +15,7 @@ export type Sentence = {
   content: string;
 };
 
-export interface ZoomableContent {
+export interface IZoomable {
   sentences: Array<Sentence>;
   toString: (zoomLevel: number) => string;
 }

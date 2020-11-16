@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.Score-Container {
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.Score-Team-1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+}
+
+.Score-Team-2 {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1;
+}

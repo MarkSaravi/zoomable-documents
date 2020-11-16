@@ -2,10 +2,10 @@
 // eslint-disable-next-line no-use-before-define
 
 import React, { useState } from "react";
-import type { ZoomableContent } from '../../zoomable-content/types';
+import type { IZoomable } from '../../zoomable-content/types';
 
 type OwnProps = {
-  content: ZoomableContent;
+  content: IZoomable;
 };
 
 type Props = OwnProps;

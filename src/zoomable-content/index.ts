@@ -2,10 +2,10 @@
 /* eslint-disable import/extensions */
 /* eslint-disable class-methods-use-this */
 // import { FIRST_SENTENCE_ID } from '../../constants';
-import type { Sentence, ZoomableContent } from "../../zoomable-content/types";
-import { getSentencesByZoomLevel, getOrderedSentenceKeys } from "../../zoomable-content/utils";
+import type { Sentence, IZoomable } from "./types";
+import { getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
 
-class Zoomable implements ZoomableContent {
+class ZoomableContent implements IZoomable {
   constructor(readonly sentences: Array<Sentence>) {}
 
   toString(zoomLevel: number): string {
@@ -20,4 +20,4 @@ class Zoomable implements ZoomableContent {
   }
 }
 
-export { Zoomable };
+export default ZoomableContent;

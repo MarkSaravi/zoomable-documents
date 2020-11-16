@@ -3,10 +3,10 @@
 // eslint-disable-next-line no-use-before-define
 
 import React from "react";
-import { Zoomable } from "./Zoomable";
 import { ZoomableArticleView } from '../ZoomableArticle';
 import { FIRST_SENTENCE_ID } from '../../constants';
 import { Sentence } from "../../zoomable-content/types";
+import ZoomableContent from "../../zoomable-content";
 
 const SENTENCE00 = 'sentence00';
 const SENTENCE01 = 'sentence01';
@@ -113,7 +113,7 @@ const sentences: Array<Sentence> = [
   ];
 
 const ZoomableArticleContainer: React.FC = () => {
-    const zoomable = new Zoomable(sentences);
+  const zoomable = new ZoomableContent(sentences);
   return (
     <>
       <div style={{ width: "480px", margin: "48px", textIndent: '24px' }}>

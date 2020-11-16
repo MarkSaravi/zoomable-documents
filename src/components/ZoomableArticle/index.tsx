@@ -33,7 +33,7 @@ return (
         }
       }}
     />
-    <p style={{ textAlign: "left" }}>{content.toString(zoomLevel)}</p>
+    <div dangerouslySetInnerHTML={{ __html: content.toString(zoomLevel) }} />
   </>
 );
 };

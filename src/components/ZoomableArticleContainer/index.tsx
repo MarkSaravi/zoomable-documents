@@ -20,12 +20,15 @@ const sentences: Array<Sentence> = [
       positions: {
         0: {
           after: FIRST_SENTENCE_ID,
+          eol: true,
         },
         1: {
           after: SENTENCE_ID02,
+          eol: true,
         },
         2: {
           after: SENTENCE_ID02,
+          eol: true,
         },
       },
       content: 'Ferdowsi was a Persian poet and the author of Shahnameh.',
@@ -35,12 +38,15 @@ const sentences: Array<Sentence> = [
       positions: {
         0: {
           after: SENTENCE_ID00,
+          eol: true,
         },
         1: {
           after: SENTENCE_ID03,
+          eol: true,
         },
         2: {
           after: SENTENCE_ID04,
+          eol: true,
         },
       },
       content: 'Ferdowsi is celebrated as the most influential figure in Persian literature and one of the greatest in the history of literature.',
@@ -62,6 +68,7 @@ const sentences: Array<Sentence> = [
       positions: {
         1: {
           after: SENTENCE_ID00,
+          eol: true,
         },
       },
       content: `Shahnameh ("Book of Kings") is one of the world's longest epic poems created by a single poet, and the national epic of Greater Iran.`,
@@ -71,6 +78,7 @@ const sentences: Array<Sentence> = [
       positions: {
         2: {
           after: SENTENCE_ID00,
+          eol: true,
         },
       },
       content: `The Shahnameh is a long epic poem written by the Persian poet Ferdowsi between c. 977 and 1010 CE and is the national epic of Greater Iran. Consisting of some 50,000 "distichs" or couplets (two-line verses), the Shahnameh is one of the world's longest epic poems. It tells mainly the mythical and to some extent the historical past of the Persian Empire from the creation of the world until the Muslim conquest in the seventh century. Iran, Azerbaijan, Afghanistan and the greater region influenced by Persian culture such as Georgia, Armenia, Turkey and Dagestan celebrate this national epic.`,
@@ -81,7 +89,7 @@ const ZoomableArticleContainer: React.FC = () => {
   const zoomable = new ZoomableContent(sentences);
   return (
     <>
-      <div style={{ width: "480px", margin: "48px", textIndent: '24px' }}>
+      <div style={{ width: "800px", margin: "48px", textIndent: '24px' }}>
         <ZoomableArticleView content={zoomable} />
       </div>
     </>

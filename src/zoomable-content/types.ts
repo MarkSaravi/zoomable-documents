@@ -6,6 +6,7 @@ type After = SentenceId;
 
 type LevelPosition = {
   after: After;
+  eol?: boolean;
 };
 
 export type Sentence = {

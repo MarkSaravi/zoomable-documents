@@ -123,4 +123,4 @@ const ZoomableArticleContainer: React.FC = () => {
   );
 };
 
-export { ZoomableArticleContainer };
+export default ZoomableArticleContainer;

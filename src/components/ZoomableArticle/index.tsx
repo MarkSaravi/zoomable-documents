@@ -19,7 +19,7 @@ return (
       type="button"
       value="zoom in"
       onClick={() => {
-        if (zoomLevel < 1) {
+        if (zoomLevel < 2) {
           setZoomLevel(zoomLevel + 1);
         }
       }}

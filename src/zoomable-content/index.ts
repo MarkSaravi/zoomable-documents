@@ -10,11 +10,10 @@ class ZoomableContent implements IZoomable {
 
   toString(zoomLevel: number): string {
     const levelSentences = getSentencesByZoomLevel(this.sentences, zoomLevel);
-    const afterIds = Object.keys(levelSentences);
     const orderedKeys = getOrderedSentenceKeys(levelSentences);
     let content = "";
-    orderedKeys.forEach((id, i) => {
-      content += `${levelSentences[id].content}${i === afterIds.length - 1 ? "" : ". "}`;
+    orderedKeys.forEach((id) => {
+      content += `${levelSentences[id].content}`;
     });
     return content;
   }

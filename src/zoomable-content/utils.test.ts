@@ -19,11 +19,9 @@ const sentences: Array<Sentence> = [
     id: SENTENCE00,
     positions: {
       0: {
-        levelId: 0,
         after: FIRST_SENTENCE_ID,
       },
       1: {
-        levelId: 1,
         after: SENTENCE03,
       },
     },
@@ -33,11 +31,9 @@ const sentences: Array<Sentence> = [
     id: SENTENCE01,
     positions: {
       0: {
-        levelId: 0,
         after: SENTENCE00,
       },
       1: {
-        levelId: 1,
         after: SENTENCE04,
       },
     },
@@ -47,11 +43,9 @@ const sentences: Array<Sentence> = [
     id: SENTENCE02,
     positions: {
       0: {
-        levelId: 0,
         after: SENTENCE01,
       },
       1: {
-        levelId: 1,
         after: SENTENCE05,
       },
     },
@@ -61,7 +55,6 @@ const sentences: Array<Sentence> = [
     id: SENTENCE03,
     positions: {
       1: {
-        levelId: 1,
         after: FIRST_SENTENCE_ID,
       },
     },
@@ -71,7 +64,6 @@ const sentences: Array<Sentence> = [
     id: SENTENCE04,
     positions: {
       1: {
-        levelId: 1,
         after: SENTENCE00,
       },
     },
@@ -81,7 +73,6 @@ const sentences: Array<Sentence> = [
     id: SENTENCE05,
     positions: {
       1: {
-        levelId: 1,
         after: SENTENCE01,
       },
     },
@@ -91,7 +82,6 @@ const sentences: Array<Sentence> = [
     id: SENTENCE06,
     positions: {
       1: {
-        levelId: 1,
         after: SENTENCE02,
       },
     },
@@ -101,7 +91,6 @@ const sentences: Array<Sentence> = [
     id: SENTENCE07,
     positions: {
       1: {
-        levelId: 1,
         after: SENTENCE06,
       },
     },

@@ -5,7 +5,6 @@ type SentenceId = string;
 type After = SentenceId;
 
 type LevelPosition = {
-  levelId: LevelId;
   after: After;
 };
 

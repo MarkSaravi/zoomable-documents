@@ -16,7 +16,7 @@ class ZoomableContent implements IZoomable {
     orderedKeys.forEach((id) => {
       paragraph += `${levelSentences[id].content} `;
       if (levelSentences[id].positions[zoomLevel].eol) {
-        paragraph = `<p>${paragraph}</p>`;
+        paragraph = `<p class="text-left">${paragraph}</p>`;
         content += paragraph;
         paragraph = "";
       }

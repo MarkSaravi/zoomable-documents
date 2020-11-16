@@ -20,7 +20,6 @@ const sentences: Array<Sentence> = [
       positions: {
         0: {
           after: FIRST_SENTENCE_ID,
-          eol: true,
         },
         1: {
           after: SENTENCE_ID02,
@@ -31,7 +30,7 @@ const sentences: Array<Sentence> = [
           eol: true,
         },
       },
-      content: 'Ferdowsi was a Persian poet and the author of Shahnameh.',
+      content: '<b>Ferdowsi</b> was a Persian poet and the author of <b>Shahnameh</b>.',
     },
     {
       id: SENTENCE_ID01,

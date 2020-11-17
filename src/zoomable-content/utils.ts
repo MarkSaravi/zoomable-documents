@@ -2,6 +2,20 @@
 
 import { Sentence } from "./types";
 
+function getMaxLevel(sentences: Array<Sentence>): number {
+  let max = 0;
+  sentences.forEach(s => {
+    const keys = Object.keys(s.positions);
+    keys.forEach(k => {
+      const v = parseInt(k, 10);
+      if (v > max) {
+        max = v;
+      }
+    });
+  });
+  return max;
+}
+
 function getSentencesByZoomLevel(sentences: Array<Sentence>, zoomLevel: number) {
         const levelSentences: { [After: string]: Sentence } = {};
         sentences.forEach((sentence) => {
@@ -25,4 +39,4 @@ function getOrderedSentenceKeys(
     return orderedIds;
 }
 
-export { getSentencesByZoomLevel, getOrderedSentenceKeys };
+export { getMaxLevel, getSentencesByZoomLevel, getOrderedSentenceKeys };

@@ -85,7 +85,7 @@ const sentences: Array<Sentence> = [
    ];
 
 const ZoomableArticleContainer: React.FC = () => {
-  const zoomable = new ZoomableContent(sentences);
+  const zoomable = new ZoomableContent(sentences, true);
   return (
     <>
       <div style={{ width: "800px", margin: "48px", textIndent: '24px' }}>

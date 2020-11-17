@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import type { IZoomable } from '../../zoomable-content/types';
+import { ZoomIn, ZoomOut } from "../Buttons";
 
 type OwnProps = {
   content: IZoomable;
@@ -15,25 +16,10 @@ const ZoomableArticleView: React.FC<Props> = (props: Props) => {
   const [zoomLevel, setZoomLevel] = useState<number>(0);
 return (
   <>
-    <input
-      type="button"
-      value="zoom in"
-      onClick={() => {
-        if (zoomLevel < 2) {
-          setZoomLevel(zoomLevel + 1);
-        }
-      }}
-    />
-    <input
-      type="button"
-      value="zoom out"
-      onClick={() => {
-        if (zoomLevel > 0) {
-          setZoomLevel(zoomLevel - 1);
-        }
-      }}
-    />
-    <div dangerouslySetInnerHTML={{ __html: content.toString(zoomLevel) }} />
+    <ZoomIn handler={()=> setZoomLevel(content.zoomIn().level) } />
+    <ZoomOut handler={()=> setZoomLevel(content.zoomOut().level) } />
+    
+    <div dangerouslySetInnerHTML={{ __html: content.toString().content }} />
   </>
 );
 };

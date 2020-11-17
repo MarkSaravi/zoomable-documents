@@ -1,4 +1,5 @@
 export const FIRST_SENTENCE_ID = '';
+
 export const BgColors = [
     '#edf2f8',
     '#b6cae2',
@@ -17,3 +18,4 @@ export const Colors = [
     '#edf2f8',
 ];
 
+export const ICON_SIZE = 24;

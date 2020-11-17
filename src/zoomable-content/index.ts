@@ -2,13 +2,25 @@
 /* eslint-disable import/extensions */
 /* eslint-disable class-methods-use-this */
 // import { FIRST_SENTENCE_ID } from '../../constants';
-import type { Sentence, IZoomable } from "./types";
-import { getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
+import type { Sentence, IZoomable, ZoomResult } from "./types";
+import { getMaxLevel, getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
 
 class ZoomableContent implements IZoomable {
-  constructor(readonly sentences: Array<Sentence>) {}
+  maxLevel: number;
 
-  toString(zoomLevel: number): string {
+  level: number;
+
+  constructor(readonly sentences: Array<Sentence>, readonly ascendingOrder: boolean) {
+    this.maxLevel = getMaxLevel(sentences);
+    this.level = ascendingOrder ? 0 : this.maxLevel;
+  }
+
+  getMaxLevel(): number {
+    return this.maxLevel;
+  }
+
+  toString(): ZoomResult {
+    const zoomLevel = this.level;
     const levelSentences = getSentencesByZoomLevel(this.sentences, zoomLevel);
     const orderedKeys = getOrderedSentenceKeys(levelSentences);
     let content = "";
@@ -21,7 +33,21 @@ class ZoomableContent implements IZoomable {
         paragraph = "";
       }
     });
-    return content;
+    return { content, level: zoomLevel };
+  }
+
+  zoomIn(): ZoomResult {
+    if (this.level < this.maxLevel) {
+      this.level++;
+    }
+    return this.toString();
+  }
+
+  zoomOut(): ZoomResult {
+    if (this.level > 0) {
+      this.level--;
+    }
+    return this.toString();
   }
 }
 

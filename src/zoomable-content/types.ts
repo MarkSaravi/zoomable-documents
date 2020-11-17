@@ -15,7 +15,14 @@ export type Sentence = {
   content: string;
 };
 
+export type ZoomResult = {
+  content: string;
+  level: number;
+}
+
 export interface IZoomable {
   sentences: Array<Sentence>;
-  toString: (zoomLevel: number) => string;
+  toString: () => ZoomResult;
+  zoomIn: () => ZoomResult;
+  zoomOut: () => ZoomResult;
 }

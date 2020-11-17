@@ -21,7 +21,7 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
         <td>
           <div dangerouslySetInnerHTML={{ __html: content.toString().content }} />
         </td>
-        <td style={{width:`${ICON_SIZE+2}px`}}>
+        <td style={{ width:`${ICON_SIZE+8}px`, padding: '4px' }}>
           <ZoomIn handler={()=> setZoomLevel(content.zoomIn().level) } />
           <ZoomOut handler={()=> setZoomLevel(content.zoomOut().level) } />
           <span style={{width:`${ICON_SIZE+2}px`, padding: 'auto'}}>{zoomLevel}</span>

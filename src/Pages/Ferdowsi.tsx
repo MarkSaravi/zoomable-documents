@@ -8,7 +8,11 @@ import ferdowsiData from '../data/sample-contents/Ferdowsi';
 
 const FerdowsiPage: React.FC = () => {
     const zoomable = new ZoomableContent(ferdowsiData, true);
-    return (<ZoomableView content={zoomable} />);
+    return (
+        <div style={{ width: '800px' }}>
+            <ZoomableView content={zoomable} />
+        </div>
+    );
 };
 
 export default FerdowsiPage;

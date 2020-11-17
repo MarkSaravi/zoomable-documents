@@ -1,6 +1,7 @@
 /* eslint-disable import/extensions */
 
 import { max, min } from 'lodash';
+import { FIRST_SENTENCE_ID } from '../constants';
 import { Sentence } from "./types";
 
 function getMinLevelForSentence(sentence :Sentence): number {
@@ -37,7 +38,7 @@ function getOrderedSentenceKeys(
     ): Array<string> {
     const orderedIds = [];
     const afterIds = Object.keys(levelSentences);
-    let afterId = "";
+    let afterId = FIRST_SENTENCE_ID;
     for (let i = 0; i < afterIds.length; i++) {
         orderedIds.push(afterId);
         afterId = levelSentences[afterId].id;

@@ -1,21 +1,26 @@
-export const FIRST_SENTENCE_ID = '';
-
-export const BgColors = [
-    '#edf2f8',
-    '#b6cae2',
-    '#7fa2cc',
-    '#497ab6',
-    '#335580',
-    '#162437',
-];
+export const FIRST_SENTENCE_ID = 'FIRST_SENTENCE_ID_00000000';
 
 export const Colors = [
-    '#696d72',
-    '#4f5358',
-    '#32363b',
-    '#01070e',
-    '#edf2f8',
-    '#edf2f8',
+    {
+        color: '#000000',
+        bgColor: '#ffffff',
+    },
+    {
+        color: '#000000',
+        bgColor: '#ffff66',
+    },
+    {
+        color: '#000000',
+        bgColor: '#66ff66',
+    },
+    {
+        color: '#000000',
+        bgColor: '#00ccff',
+    },
+    {
+        color: '#000000',
+        bgColor: '#cc80ff',
+    },
 ];
 
 export const ICON_SIZE = 24;

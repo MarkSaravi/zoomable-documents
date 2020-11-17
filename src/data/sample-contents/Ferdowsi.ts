@@ -1,4 +1,4 @@
-import { Sentence } from "../../zoomable-content/types";
+import { Sentence } from '../../models/types';
 import { FIRST_SENTENCE_ID } from '../../constants';
 
 const ID00 = 'sentence-id00';

@@ -5,7 +5,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import "./App.css";
 
-import ZoomableArticleContainer from "./components/ZoomableArticleContainer";
+import Ferdowsi from "./Pages/Ferdowsi";
 import ZoomableScoreBoard from './components/ZoomableScoreBoard';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={ZoomableArticleContainer} exact />
+          <Route path="/" component={Ferdowsi} exact />
           <Route path="/score" component={ZoomableScoreBoard} />
         </Switch>
       </BrowserRouter>

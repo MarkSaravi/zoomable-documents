@@ -6,7 +6,7 @@ import { Colors } from '../constants';
 import type { Sentence, IZoomable, ZoomResult } from "./types";
 import { getMaxLevel, getMinLevelForSentence, getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
 
-class ZoomableContent implements IZoomable {
+class Zoomable implements IZoomable {
   maxLevel: number;
 
   level: number;
@@ -53,4 +53,4 @@ class ZoomableContent implements IZoomable {
   }
 }
 
-export default ZoomableContent;
+export default Zoomable;

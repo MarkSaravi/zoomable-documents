@@ -2,6 +2,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable class-methods-use-this */
 // import { FIRST_SENTENCE_ID } from '../../constants';
+import { BgColors, Colors } from '../constants';
 import type { Sentence, IZoomable, ZoomResult } from "./types";
 import { getMaxLevel, getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
 
@@ -26,7 +27,7 @@ class ZoomableContent implements IZoomable {
     let content = "";
     let paragraph = "";
     orderedKeys.forEach((id) => {
-      paragraph += `${levelSentences[id].content} `;
+      paragraph += `<span>${levelSentences[id].content}</span> `;
       if (levelSentences[id].positions[zoomLevel].eol) {
         paragraph = `<p class="text-left">${paragraph}</p>`;
         content += paragraph;

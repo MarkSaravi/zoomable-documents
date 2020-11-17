@@ -1,17 +1,23 @@
 /* eslint-disable import/extensions */
 
+import { max, min } from 'lodash';
 import { Sentence } from "./types";
+
+function getMinLevelForSentence(sentence :Sentence): number {
+  return min(Object.keys(sentence.positions).map(k => parseInt(k, 10))) || 0;
+}
+
+function getMaxLevelForSentence(sentence :Sentence): number {
+  return max(Object.keys(sentence.positions).map(k => parseInt(k, 10))) || 0;
+}
 
 function getMaxLevel(sentences: Array<Sentence>): number {
   let max = 0;
   sentences.forEach(s => {
-    const keys = Object.keys(s.positions);
-    keys.forEach(k => {
-      const v = parseInt(k, 10);
-      if (v > max) {
-        max = v;
-      }
-    });
+    const m = getMaxLevelForSentence(s);
+    if (m > max) {
+      max = m;
+    }
   });
   return max;
 }
@@ -39,4 +45,9 @@ function getOrderedSentenceKeys(
     return orderedIds;
 }
 
-export { getMaxLevel, getSentencesByZoomLevel, getOrderedSentenceKeys };
+export {
+  getMaxLevel,
+  getMinLevelForSentence,
+  getOrderedSentenceKeys,
+  getSentencesByZoomLevel,
+};

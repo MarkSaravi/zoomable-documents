@@ -3,7 +3,7 @@
 /* eslint-disable class-methods-use-this */
 // import { FIRST_SENTENCE_ID } from '../../constants';
 import { Colors, END_OF_LINE } from './constants';
-import type { Sentence, IZoomable, ZoomResult } from "./types";
+import type { Sentences, IZoomable, ZoomResult } from "./types";
 import { getMaxLevel, getMinLevelForSentence, getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
 
 class Zoomable implements IZoomable {
@@ -11,7 +11,7 @@ class Zoomable implements IZoomable {
 
   level: number;
 
-  constructor(readonly sentences: Array<Sentence>, readonly ascendingOrder: boolean) {
+  constructor(readonly sentences: Sentences, readonly ascendingOrder: boolean) {
     this.maxLevel = getMaxLevel(sentences);
     this.level = ascendingOrder ? 0 : this.maxLevel;
   }
@@ -39,7 +39,7 @@ class Zoomable implements IZoomable {
           content += this.wrapInParagraph(paragraph);
           paragraph = "";
         }
-      } else if (levelSentences[id].content as Sentence) {
+      } else if (levelSentences[id].content as Sentences) {
         console.log('\x1b[34m%s\x1b[0m', `Sentence ${levelSentences[id].content}`);
       }
     });

@@ -1,18 +1,16 @@
-import { Sentence } from '../../models/types';
-import { END_OF_LINE, FIRST_SENTENCE_ID } from '../../models/constants';
+import { Sentences } from '../../models/types';
+import {
+  END_OF_LINE, FIRST_SENTENCE_ID,
+  ID00,
+  ID01,
+  ID02,
+  ID03,
+  ID04,
+  ID05,
+  ID06,
+} from '../../models/constants';
 
-const ID00 = 'sentence-id00';
-const ID01 = 'sentence-id01';
-const ID02 = 'sentence-id02';
-const ID03 = 'sentence-id03';
-const ID04 = 'sentence-id04';
-const ID05 = 'sentence-id05';
-const ID06 = 'sentence-id06';
-const ID07 = 'sentence-id07';
-const ID08 = 'sentence-id08';
-const ID09 = 'sentence-id09';
-
-const sentences: Array<Sentence> = [
+const sentences: Sentences = [
     {
       id: ID00,
       positions: {

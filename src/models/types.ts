@@ -9,8 +9,10 @@ type LevelPosition = {
 export type Sentence = {
   id: SentenceId;
   positions: { [LevelId: number]: LevelPosition };
-  content: string | Sentence;
+  content: string | Sentences;
 };
+
+export type Sentences = Array<Sentence>;
 
 export type ZoomResult = {
   content: string;

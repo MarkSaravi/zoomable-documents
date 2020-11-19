@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 
 import { max, min } from 'lodash';
-import { FIRST_SENTENCE_ID } from '../constants';
+import { FIRST_SENTENCE_ID } from './constants';
 import { Sentence } from "./types";
 
 function getMinLevelForSentence(sentence :Sentence): number {

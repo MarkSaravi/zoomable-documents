@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { VscZoomIn, VscZoomOut } from "react-icons/vsc";
-import { ICON_SIZE } from '../constants';
+import { ICON_SIZE } from '../models/constants';
 
 type Props = {
     handler: () => void;

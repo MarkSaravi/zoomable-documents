@@ -2,7 +2,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable class-methods-use-this */
 // import { FIRST_SENTENCE_ID } from '../../constants';
-import { Colors } from '../constants';
+import { Colors, END_OF_LINE } from './constants';
 import type { Sentence, IZoomable, ZoomResult } from "./types";
 import { getMaxLevel, getMinLevelForSentence, getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
 
@@ -20,6 +20,10 @@ class Zoomable implements IZoomable {
     return this.maxLevel;
   }
 
+  wrapInParagraph(s: string): string {
+    return `<p style="text-align: left">${s}</p>`;
+  }
+
   toString(): ZoomResult {
     const zoomLevel = this.level;
     const levelSentences = getSentencesByZoomLevel(this.sentences, zoomLevel);
@@ -28,13 +32,18 @@ class Zoomable implements IZoomable {
     let paragraph = "";
     orderedKeys.forEach((id) => {
       const color = Colors[getMinLevelForSentence(levelSentences[id])];
-      paragraph += `<span style="color: ${color.color}; background-color: ${color.bgColor};">${levelSentences[id].content}</span> `;
-      if (levelSentences[id].positions[zoomLevel].eol) {
-        paragraph = `<p class="text-left">${paragraph}</p>`;
-        content += paragraph;
-        paragraph = "";
+      if (levelSentences[id].content as string) {
+        if (levelSentences[id].content !== END_OF_LINE) {
+          paragraph += `<span style="color: ${color.color}; background-color: ${color.bgColor};">${levelSentences[id].content}</span> `;
+        } else {
+          content += this.wrapInParagraph(paragraph);
+          paragraph = "";
+        }
+      } else if (levelSentences[id].content as Sentence) {
+        console.log('\x1b[34m%s\x1b[0m', `Sentence ${levelSentences[id].content}`);
       }
     });
+    content += paragraph ? this.wrapInParagraph(paragraph) : "";
     return { content, level: zoomLevel };
   }
 

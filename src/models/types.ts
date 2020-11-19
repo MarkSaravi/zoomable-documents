@@ -1,18 +1,15 @@
-type LevelId = number;
-
 type SentenceId = string;
 
 type After = SentenceId;
 
 type LevelPosition = {
   after: After;
-  eol?: boolean;
 };
 
 export type Sentence = {
   id: SentenceId;
   positions: { [LevelId: number]: LevelPosition };
-  content: string;
+  content: string | Sentence;
 };
 
 export type ZoomResult = {

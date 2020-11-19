@@ -1,3 +1,4 @@
+export const END_OF_LINE = '<br>';
 export const FIRST_SENTENCE_ID = 'FIRST_SENTENCE_ID_00000000';
 
 export const Colors = [

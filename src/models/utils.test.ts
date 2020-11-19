@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 
-import { FIRST_SENTENCE_ID } from "../constants";
+import { FIRST_SENTENCE_ID } from "./constants";
 import { Sentence } from "./types";
 import { getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
 

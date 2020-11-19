@@ -22,4 +22,5 @@ export interface IZoomable {
   toString: () => ZoomResult;
   zoomIn: () => ZoomResult;
   zoomOut: () => ZoomResult;
+  getMaxLevel: () => number;
 }

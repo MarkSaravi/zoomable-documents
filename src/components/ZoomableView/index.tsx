@@ -15,21 +15,13 @@ type Props = OwnProps;
 const ZoomableView: React.FC<Props> = (props: Props) => {
   const { content } = props;
   const [zoomLevel, setZoomLevel] = useState<number>(0);
+  const maxLevel = content.getMaxLevel();
   return (
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <div dangerouslySetInnerHTML={{ __html: content.toString().content }} />
-          </td>
-          <td style={{ width:`${ICON_SIZE+8}px`, padding: '4px' }}>
-            <ZoomIn handler={()=> setZoomLevel(content.zoomIn().level) } />
-            <ZoomOut handler={()=> setZoomLevel(content.zoomOut().level) } />
-            <span style={{width:`${ICON_SIZE+2}px`, padding: 'auto'}}>{zoomLevel+1}</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div>
+    <div dangerouslySetInnerHTML={{ __html: content.toString().content }} />
+    {zoomLevel < maxLevel && <ZoomIn handler={()=> setZoomLevel(content.zoomIn().level) } />}
+    {zoomLevel > 0 && <ZoomOut handler={()=> setZoomLevel(content.zoomOut().level) } />}
+    </div>
   );
 };
 

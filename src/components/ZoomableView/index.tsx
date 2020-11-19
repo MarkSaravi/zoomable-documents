@@ -24,7 +24,7 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
         <td style={{ width:`${ICON_SIZE+8}px`, padding: '4px' }}>
           <ZoomIn handler={()=> setZoomLevel(content.zoomIn().level) } />
           <ZoomOut handler={()=> setZoomLevel(content.zoomOut().level) } />
-          <span style={{width:`${ICON_SIZE+2}px`, padding: 'auto'}}>{zoomLevel}</span>
+          <span style={{width:`${ICON_SIZE+2}px`, padding: 'auto'}}>{zoomLevel+1}</span>
         </td>
       </tr>
     </table>

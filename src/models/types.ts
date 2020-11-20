@@ -1,5 +1,3 @@
-import { isArray } from "lodash";
-
 type SentenceId = string;
 
 type After = SentenceId;

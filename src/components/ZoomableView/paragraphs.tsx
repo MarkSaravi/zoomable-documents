@@ -4,6 +4,11 @@ import { Colors, END_OF_LINE } from '../../models/constants';
 import { Sentences } from '../../models/types';
 import { getMinLevelForSentence, getOrderedSentenceKeys, getSentencesByZoomLevel } from '../../models/utils';
 
+type Props = {
+    sentences: Sentences;
+    zoomLevel: number;
+}
+
 function toHtml(s: string | Sentences) {
     return ReactHtmlParser(s as string);
 }
@@ -30,5 +35,9 @@ function genParagraphs(sentences: Sentences, zoomLevel: number) {
     paragraphs.push(wrapInParagraph(paragraph));
     return paragraphs;
 }
-  
-export default genParagraphs;
+
+const Paragraphs: React.FC<Props> = (props: Props) => {
+    const { sentences, zoomLevel } = props;
+    return <>{genParagraphs(sentences, zoomLevel)}</>;
+};
+export default Paragraphs;

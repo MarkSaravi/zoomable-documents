@@ -2,9 +2,9 @@
 // eslint-disable-next-line no-use-before-define
 
 import React, { useState, useEffect, MouseEvent } from "react";
-
 import type { Sentences } from '../../models/types';
-import genParagraphs from "./paragraphs";
+import { getMaxLevel } from "../../models/utils";
+import Paragraphs from './paragraphs';
 
 type CursorType = 'zoom-in' | 'zoom-out';
 
@@ -16,14 +16,19 @@ type Props = OwnProps;
 
 const ZoomableView: React.FC<Props> = (props: Props) => {
   const { sentences } = props;
+  const maxLevel = getMaxLevel(sentences);
   const [zoomLevel, setZoomLevel] = useState<number>(0);
   const [cursor, setCursor] = useState<CursorType>('zoom-in');
 
   const onMouseClicked = (event: MouseEvent) => {
     if (event.shiftKey) {
-      // setZoomLevel(sentences.zoomOut().level);
+      if (zoomLevel > 0) {
+        setZoomLevel(zoomLevel -1);
+      }
     } else {
-      // setZoomLevel(content.zoomIn().level);
+      if (zoomLevel < maxLevel) {
+        setZoomLevel(zoomLevel + 1);
+      }
     }
   };
 
@@ -51,16 +56,17 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
   },[zoomLevel])
 
   return (
-    <div>
       <section
         onClick={onMouseClicked}
         onMouseEnter={onMouseEntered}
         onMouseMove={onMouseMoved}
         style={{cursor}}
       >
-        {genParagraphs(sentences, zoomLevel)}
+        <Paragraphs
+          sentences={sentences} 
+          zoomLevel={zoomLevel} 
+        />
       </section>
-    </div>
   );
 };
 

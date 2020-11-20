@@ -12,7 +12,7 @@ function getMaxLevelForSentence(sentence :Sentence): number {
   return max(Object.keys(sentence.positions).map(k => parseInt(k, 10))) || 0;
 }
 
-function getMaxLevel(sentences: Array<Sentence>): number {
+function getMaxLevel(sentences: Sentences): number {
   let max = 0;
   sentences.forEach(s => {
     const m = getMaxLevelForSentence(s);

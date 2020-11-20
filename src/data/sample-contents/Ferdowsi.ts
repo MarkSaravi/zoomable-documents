@@ -1,4 +1,4 @@
-import { Sentences } from '../../models/types';
+import { Sentence, Sentences } from '../../models/types';
 import {
   END_OF_LINE, FIRST_SENTENCE_ID,
   ID00,
@@ -9,7 +9,23 @@ import {
   ID05,
   ID06,
   ID07,
+  ID10,
+  ID11,
+  ID12,
+  ID13,
 } from '../../models/constants';
+
+const shahnameh: Sentences = [
+  {
+    id: ID10,
+    positions: {
+      0: {
+        after: FIRST_SENTENCE_ID,
+      },
+    },
+    content: `Shahnameh ("Book of Kings") is one of the world's longest epic poems created by a single poet, and the national epic of Greater Iran.`,
+  },
+];
 
 const sentences: Sentences = [
     {
@@ -70,7 +86,7 @@ const sentences: Sentences = [
           after: ID05,
         },
       },
-      content: `Shahnameh ("Book of Kings") is one of the world's longest epic poems created by a single poet, and the national epic of Greater Iran.`,
+      content: shahnameh,
     },
     {
       id: ID04,

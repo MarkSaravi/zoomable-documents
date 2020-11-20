@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactHtmlParser  from 'react-html-parser';
+import { ZoomableView } from './index';
 import { Colors, END_OF_LINE } from '../../models/constants';
 import { Sentences } from '../../models/types';
-import { getMinLevelForSentence, getOrderedSentenceKeys, getSentencesByZoomLevel } from '../../models/utils';
+import { getMinLevelForSentence, getOrderedSentenceKeys, getSentencesByZoomLevel, getSentenceType } from '../../models/utils';
 
 type Props = {
     sentences: Sentences;
@@ -25,11 +26,19 @@ function genParagraphs(sentences: Sentences, zoomLevel: number) {
     orderedKeys.forEach(key => {
         const color = Colors[getMinLevelForSentence(levelSentences[key])];
         const content = levelSentences[key].content;
-        if (content === END_OF_LINE) {
-        paragraphs.push(wrapInParagraph(paragraph));
-        paragraph = [];
-        } else {
-        paragraph.push (<span style={{color: color.color, backgroundColor: color.bgColor}}>{toHtml(content)}</span>);
+        const contentType = getSentenceType(content);
+        switch (contentType) {
+            case 'string':
+                if (content === END_OF_LINE) {
+                    paragraphs.push(wrapInParagraph(paragraph));
+                    paragraph = [];
+                } else {
+                    paragraph.push (<span style={{color: color.color, backgroundColor: color.bgColor}}>{toHtml(content)}</span>);
+                }
+                break;
+            case 'sentences':
+                paragraph.push(<ZoomableView sentences={content as Sentences} />);
+                break;
         }
     });
     paragraphs.push(wrapInParagraph(paragraph));

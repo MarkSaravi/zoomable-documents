@@ -49,10 +49,19 @@ export const newsUpdates: Sentences = [
                 after: FIRST_SENTENCE_ID,
             },
         },
-        content: firstDay,
+        content: 'First day news 1',
     },
     {
         id: ID01,
+        positions: {
+            0: {
+                after: ID00,
+            },
+        },
+        content: 'First day news 2',
+    },
+    {
+        id: ID02,
         positions: {
             1: {
                 after: FIRST_SENTENCE_ID,
@@ -61,7 +70,7 @@ export const newsUpdates: Sentences = [
         content: 'Second day news',
     },
     {
-        id: ID02,
+        id: ID03,
         positions: {
             2: {
                 after: FIRST_SENTENCE_ID,
@@ -70,3 +79,5 @@ export const newsUpdates: Sentences = [
         content: 'Third day news',
     },
 ];
+
+export default newsUpdates;

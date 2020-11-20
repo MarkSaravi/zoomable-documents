@@ -3,12 +3,12 @@
 
 import React from "react";
 import { ZoomableView } from '../components/ZoomableView';
-import ferdowsiData from '../data/sample-contents/Ferdowsi';
+import nested from '../data/sample-contents/Ferdowsi';
 
 const FerdowsiPage: React.FC = () => {
     return (
         <div style={{ width: '800px' }}>
-            <ZoomableView sentences={ferdowsiData} />
+            <ZoomableView sentences={nested} />
         </div>
     );
 };

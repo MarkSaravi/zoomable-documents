@@ -1,4 +1,4 @@
-export const END_OF_LINE = '<br>';
+export const END_OF_LINE = 'END_OF_LINE_0000000000000111111111111';
 export const FIRST_SENTENCE_ID = 'FIRST_SENTENCE_ID_00000000';
 
 export const ID00 = 'sentence-id00';

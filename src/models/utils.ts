@@ -2,7 +2,7 @@
 
 import { max, min } from 'lodash';
 import { FIRST_SENTENCE_ID } from './constants';
-import { Sentence } from "./types";
+import { Sentence, Sentences } from "./types";
 
 function getMinLevelForSentence(sentence :Sentence): number {
   return min(Object.keys(sentence.positions).map(k => parseInt(k, 10))) || 0;
@@ -46,9 +46,18 @@ function getOrderedSentenceKeys(
     return orderedIds;
 }
 
+function getSentenceType(content: string | Sentences): 'sentences' | 'string' {
+  console.log('\x1b[34m%s\x1b[0m', `**********`);
+  if (Array.isArray(content)) {
+    return 'sentences'
+  };
+  return 'string';
+}
+
 export {
   getMaxLevel,
   getMinLevelForSentence,
   getOrderedSentenceKeys,
   getSentencesByZoomLevel,
+  getSentenceType,
 };

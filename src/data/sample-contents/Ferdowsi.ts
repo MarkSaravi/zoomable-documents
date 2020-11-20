@@ -8,6 +8,7 @@ import {
   ID04,
   ID05,
   ID06,
+  ID07,
 } from '../../models/constants';
 
 const sentences: Sentences = [
@@ -27,10 +28,19 @@ const sentences: Sentences = [
       content: '<b>Ferdowsi</b> was a Persian poet and the author of <b>Shahnameh</b>.',
     },
     {
-      id: ID01,
+      id: ID07,
       positions: {
         0: {
           after: ID00,
+        },
+      },
+      content: END_OF_LINE,
+    },
+   {
+      id: ID01,
+      positions: {
+        0: {
+          after: ID07,
         },
         1: {
           after: ID06,

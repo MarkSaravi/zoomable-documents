@@ -1,7 +1,40 @@
 /* eslint-disable import/extensions */
 
+import { FIRST_SENTENCE_ID } from '../models/constants';
 import { Sentences } from '../models/types';
 import news1 from './news1';
+
+const new1Updates: Sentences = [
+    {
+        id: 'C-01-00-00',
+        positions: {
+            0: {
+                after: FIRST_SENTENCE_ID,
+            },
+        },
+        content: 'First day news, first level updated',
+    },
+    {
+        id: 'C-01-00-01',
+        positions: {
+            1: {
+                after: FIRST_SENTENCE_ID,
+            },
+        },
+        content: 'First day news, first level updated with more details',
+    },
+    {
+        id: 'C-01-00-02',
+        positions: {
+            2: {
+                after: FIRST_SENTENCE_ID,
+            },
+        },
+        content: 'First day news, first level updated with more, more details',
+    },
+];
+
+news1[1].content = new1Updates;
 
 export const newsUpdates: Sentences = [
     ...news1,

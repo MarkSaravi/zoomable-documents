@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import "./App.css";
 
 import Ferdowsi from "./Pages/Ferdowsi";
-import Nested from './Pages/Nested';
+import News from './Pages/News';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/" component={Ferdowsi} exact />
-          <Route path="/nested" component={Nested} />
+          <Route path="/news/:day" component={News} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -1,9 +1,8 @@
 /* eslint-disable import/extensions */
 
 import { v4 as uuidv4 } from 'uuid';
-// import { FIRST_SENTENCE_ID } from '../models/constants';
 import { Sentences } from '../models/types';
-// import news1 from './news1';
+import news1 from './news1';
 
 // const new1Updates: Sentences = {
 //     id: uuidv4(),
@@ -43,6 +42,7 @@ import { Sentences } from '../models/types';
 export const newsUpdates: Sentences = {
     id: uuidv4(),
     sentences: [
+        ...news1.sentences,
         {
             id: 'H-02-00',
             positions: {

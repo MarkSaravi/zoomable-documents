@@ -23,9 +23,9 @@ function getMaxLevel(sentences: Sentences): number {
   return max;
 }
 
-function getSentencesByZoomLevel(sentences: Array<Sentence>, zoomLevel: number) {
+function getSentencesByZoomLevel(sentences: Sentences, zoomLevel: number) {
         const levelSentences: { [After: string]: Sentence } = {};
-        sentences.forEach((sentence) => {
+        sentences.sentences.forEach((sentence) => {
           if (sentence.positions[zoomLevel]) {
             levelSentences[sentence.positions[zoomLevel].after] = sentence;
           }

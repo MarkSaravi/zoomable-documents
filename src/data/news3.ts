@@ -2,11 +2,12 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import { Sentences } from '../models/types';
-// import news2 from './news2';
+import news2 from './news2';
 
 export const newsUpdates: Sentences = {
     id: uuidv4(),
     sentences: [
+        ...news2.sentences,
         {
             id: 'H-03-00',
             positions: {

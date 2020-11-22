@@ -20,7 +20,7 @@ function wrapInParagraph(paragraph:any[]) {
 }
   
 function genParagraphs(sentences: Sentences, zoomLevel: number) {
-    const levelSentences = getSentencesByZoomLevel(sentences.sentences, zoomLevel);
+    const levelSentences = getSentencesByZoomLevel(sentences, zoomLevel);
     const orderedKeys = getOrderedSentenceKeys(levelSentences);
      let paragraphs: any[] = [];
     let paragraph: any[] = [];

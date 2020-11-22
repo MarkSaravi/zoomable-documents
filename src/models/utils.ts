@@ -47,7 +47,6 @@ function getOrderedSentenceKeys(
 }
 
 function getSentenceType(content: string | Sentences): 'sentences' | 'string' {
-  console.log('\x1b[34m%s\x1b[0m', `**********`);
   if (Array.isArray(content)) {
     return 'sentences';
   }

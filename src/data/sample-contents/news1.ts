@@ -1,4 +1,5 @@
 import {
+    END_OF_LINE,
     FIRST_SENTENCE_ID,
 } from '../../models/constants';
 import { Sentences } from '../../models/types';
@@ -21,6 +22,15 @@ export const newsUpdates: Sentences = [
             },
         },
         content: 'First day news, first level',
+    },
+    {
+        id: 'E-01-00',
+        positions: {
+            0: {
+                after: 'C-01-00',
+            },
+        },
+        content: END_OF_LINE,
     },
 ];
 

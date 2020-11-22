@@ -48,11 +48,7 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
   }
 
   useEffect(()=>{
-    console.log('\x1b[34m%s\x1b[0m', `Cursor changed: ${cursor}`);
-  },[cursor])
-
-  useEffect(()=>{
-    console.log('\x1b[34m%s\x1b[0m', `zoomLevel changed: ${zoomLevel}`);
+    console.log('\x1b[34m%s\x1b[0m', `zoomLevel: ${zoomLevel}`);
   },[zoomLevel])
 
   return (

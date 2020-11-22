@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import React from 'react';
 import ReactHtmlParser  from 'react-html-parser';
 import { ZoomableView } from './index';
@@ -15,7 +16,7 @@ function toHtml(s: string | Sentences) {
 }
   
 function wrapInParagraph(paragraph:any[]) {
-    return <p style={{textAlign: 'left'}} >{[...paragraph]}</p>;
+    return <p style={{textAlign: 'left'}} key={uuidv4()}>{[...paragraph]}</p>;
 }
   
 function genParagraphs(sentences: Sentences, zoomLevel: number) {
@@ -33,11 +34,11 @@ function genParagraphs(sentences: Sentences, zoomLevel: number) {
                     paragraphs.push(wrapInParagraph(paragraph));
                     paragraph = [];
                 } else {
-                    paragraph.push (<span style={{color: color.color, backgroundColor: color.bgColor}}>{toHtml(content)}</span>);
+                    paragraph.push (<span style={{color: color.color, backgroundColor: color.bgColor}} key={uuidv4()}>{toHtml(content)}</span>);
                 }
                 break;
             case 'sentences':
-                paragraph.push(<ZoomableView sentences={content as Sentences} />);
+                paragraph.push(<ZoomableView sentences={content as Sentences} key={uuidv4()}/>);
                 break;
         }
     });

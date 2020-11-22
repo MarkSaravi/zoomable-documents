@@ -14,7 +14,7 @@ function getMaxLevelForSentence(sentence :Sentence): number {
 
 function getMaxLevel(sentences: Sentences): number {
   let max = 0;
-  sentences.forEach(s => {
+  sentences.sentences.forEach(s => {
     const m = getMaxLevelForSentence(s);
     if (m > max) {
       max = m;

@@ -12,7 +12,10 @@ export type Sentence = {
   content: string | Sentences;
 };
 
-export type Sentences = Array<Sentence>;
+export type Sentences = {
+  id: string;
+  sentences: Array<Sentence>;
+}
 
 export type ZoomResult = {
   content: string;

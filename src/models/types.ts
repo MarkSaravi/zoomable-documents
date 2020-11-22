@@ -17,6 +17,8 @@ export type Sentences = {
   sentences: Array<Sentence>;
 }
 
+export type LevelSentences = { [After: string]: Sentence };
+
 export type ZoomResult = {
   content: string;
   level: number;

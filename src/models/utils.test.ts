@@ -4,7 +4,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { FIRST_SENTENCE_ID } from "./constants";
 import { Sentences } from "./types";
-import { getSentencesByZoomLevel, getOrderedSentenceKeys } from "./utils";
+import { getSentencesByZoomLevel, getOrderedSentenceKeys, isSentenceType } from "./utils";
 
 const SENTENCE00 = "sentence00";
 const SENTENCE01 = "sentence01";
@@ -111,6 +111,9 @@ describe("getSentencesByZoomLevel", () => {
         const sentencesByZoomLevel = getSentencesByZoomLevel(sentences, 1);
         const keys = Object.keys(sentencesByZoomLevel);
         expect(keys).toStrictEqual([
+          "sentence03",
+          "sentence04",
+          "sentence05",
           FIRST_SENTENCE_ID,
           "sentence00",
           "sentence01",
@@ -126,18 +129,25 @@ describe('getOrderedSentenceKeys', () => {
         const orderedKeys = getOrderedSentenceKeys(sentencesByZoomLevel);
         expect(orderedKeys).toStrictEqual([FIRST_SENTENCE_ID, "sentence00", "sentence01"]);
     });
-    // test("zoom level 1", () => {
-    //   const sentencesByZoomLevel = getSentencesByZoomLevel(sentences, 1);
-    //   const orderedKeys = getOrderedSentenceKeys(sentencesByZoomLevel);
-    //   expect(orderedKeys).toStrictEqual([
-    //     FIRST_SENTENCE_ID,
-    //     "sentence03",
-    //     "sentence00",
-    //     "sentence04",
-    //     "sentence01",
-    //     "sentence05",
-    //     "sentence02",
-    //     "sentence06",
-    //   ]);
-    // });
+    test("zoom level 1", () => {
+      const sentencesByZoomLevel = getSentencesByZoomLevel(sentences, 1);
+      const orderedKeys = getOrderedSentenceKeys(sentencesByZoomLevel);
+      expect(orderedKeys).toStrictEqual([
+        FIRST_SENTENCE_ID,
+        "sentence03",
+        "sentence00",
+        "sentence04",
+        "sentence01",
+        "sentence05",
+        "sentence02",
+        "sentence06",
+      ]);
+    });
+});
+
+describe('isSentenceType', () => {
+  test('is Sentences type', () => {
+    expect(isSentenceType(sentences)).toBe(true);
+    expect(isSentenceType("this is a content")).toBe(false);
+  });
 });

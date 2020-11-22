@@ -2,7 +2,7 @@
 
 import { max, min } from 'lodash';
 import { FIRST_SENTENCE_ID } from './constants';
-import { Sentence, Sentences } from "./types";
+import { LevelSentences, Sentence, Sentences } from "./types";
 
 function getMinLevelForSentence(sentence :Sentence): number {
   return min(Object.keys(sentence.positions).map(k => parseInt(k, 10))) || 0;
@@ -24,7 +24,7 @@ function getMaxLevel(sentences: Sentences): number {
 }
 
 function getSentencesByZoomLevel(sentences: Sentences, zoomLevel: number) {
-        const levelSentences: { [After: string]: Sentence } = {};
+        const levelSentences: LevelSentences = {};
         sentences.sentences.forEach((sentence) => {
           if (sentence.positions[zoomLevel]) {
             levelSentences[sentence.positions[zoomLevel].after] = sentence;
@@ -33,9 +33,7 @@ function getSentencesByZoomLevel(sentences: Sentences, zoomLevel: number) {
         return levelSentences;
 }
 
-function getOrderedSentenceKeys(
-    levelSentences: { [After: string]: Sentence }
-    ): Array<string> {
+function getOrderedSentenceKeys(levelSentences: LevelSentences): Array<string> {
     const orderedIds = [];
     const afterIds = Object.keys(levelSentences);
     let afterId = FIRST_SENTENCE_ID;
@@ -46,8 +44,12 @@ function getOrderedSentenceKeys(
     return orderedIds;
 }
 
+function isSentenceType(content: string | Sentences): content is Sentences {
+  return (content as Sentences).id !== undefined;
+}
+
 function getSentenceType(content: string | Sentences): 'sentences' | 'string' {
-  if (Array.isArray(content)) {
+  if (isSentenceType(content)) {
     return 'sentences';
   }
   return 'string';
@@ -59,4 +61,5 @@ export {
   getOrderedSentenceKeys,
   getSentencesByZoomLevel,
   getSentenceType,
+  isSentenceType,
 };

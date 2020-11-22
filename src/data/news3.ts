@@ -1,7 +1,6 @@
-import {
-    FIRST_SENTENCE_ID,
-} from '../../models/constants';
-import { Sentences } from '../../models/types';
+/* eslint-disable import/extensions */
+
+import { Sentences } from '../models/types';
 import news2 from './news2';
 
 export const newsUpdates: Sentences = [
@@ -10,7 +9,7 @@ export const newsUpdates: Sentences = [
         id: 'H-03-00',
         positions: {
             0: {
-                after: 'C-02-00',
+                after: 'E-02-00',
             },
         },
         content: '<h4>Third day news Headline</h4>',

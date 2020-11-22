@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
+
 import {
-    END_OF_LINE,
     FIRST_SENTENCE_ID,
-} from '../../models/constants';
-import { Sentences } from '../../models/types';
+} from '../models/constants';
+import { Sentences } from '../models/types';
 
 export const newsUpdates: Sentences = [
     {
@@ -30,7 +31,7 @@ export const newsUpdates: Sentences = [
                 after: 'C-01-00',
             },
         },
-        content: END_OF_LINE,
+        content: '<div style="margin-top: 24px; margin-bottom: 24px;border-bottom: solid 1px black"/>',
     },
 ];
 

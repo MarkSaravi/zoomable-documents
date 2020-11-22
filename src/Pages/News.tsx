@@ -5,9 +5,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { ZoomableView } from '../components/ZoomableView';
 import { Sentences } from "../models/types";
-import news1 from '../data/sample-contents/news1';
-import news2 from '../data/sample-contents/news2';
-import news3 from '../data/sample-contents/news3';
+import news1 from '../data/news1';
+import news2 from '../data/news2';
+import news3 from '../data/news3';
 
 const NewsPage: React.FC = () => {
     const { day } = useParams<{ day?: string}>();

@@ -3,7 +3,7 @@
 
 import React from "react";
 import { ZoomableView } from '../components/ZoomableView';
-import ferdowsiData from '../data/sample-contents/Ferdowsi';
+import ferdowsiData from '../data/Ferdowsi';
 
 const FerdowsiPage: React.FC = () => {
     return (

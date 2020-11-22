@@ -1,19 +1,18 @@
-import { Sentence, Sentences } from '../../models/types';
+/* eslint-disable import/extensions */
+
+import { Sentences } from '../models/types';
 import {
   END_OF_LINE, FIRST_SENTENCE_ID,
   ID00,
   ID01,
   ID02,
   ID03,
-  ID04,
   ID05,
   ID06,
   ID07,
   ID10,
   ID11,
-  ID12,
-  ID13,
-} from '../../models/constants';
+} from '../models/constants';
 
 const shahnameh: Sentences = [
   {

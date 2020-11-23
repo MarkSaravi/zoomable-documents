@@ -7,6 +7,7 @@ import "./App.css";
 
 import Ferdowsi from "./Pages/Ferdowsi";
 import News from './Pages/News';
+import ColorsTest from './Pages/ColorsTest';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route path="/" component={Ferdowsi} exact />
           <Route path="/news/:day" component={News} />
+          <Route path="/colors" component={ColorsTest} />
         </Switch>
       </BrowserRouter>
     </div>

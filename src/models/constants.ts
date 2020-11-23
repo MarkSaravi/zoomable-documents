@@ -23,9 +23,14 @@ export const ID18 = 'sentence-id08';
 export const ID19 = 'sentence-id09';
 
 export const Colors = [
+[
     {
         color: '#000000',
         bgColor: '#ffffff',
+    },
+    {
+        color: '#000000',
+        bgColor: '#ffffcc',
     },
     {
         color: '#000000',
@@ -33,7 +38,69 @@ export const Colors = [
     },
     {
         color: '#000000',
-        bgColor: '#66ff66',
+        bgColor: '#e6e600',
+    },
+    {
+        color: '#000000',
+        bgColor: '#808000',
+    },
+],
+[
+    {
+        color: '#000000',
+        bgColor: '#fff0e6',
+    },
+    {
+        color: '#000000',
+        bgColor: '#ffc299',
+    },
+    {
+        color: '#000000',
+        bgColor: '#ff944d',
+    },
+    {
+        color: '#000000',
+        bgColor: '#ff6600',
+    },
+    {
+        color: '#000000',
+        bgColor: '#e65c00',
+    },
+],
+[
+    {
+        color: '#000000',
+        bgColor: '#e6ffe6',
+    },
+    {
+        color: '#000000',
+        bgColor: '#99ff99',
+    },
+    {
+        color: '#000000',
+        bgColor: '#4dff4d',
+    },
+    {
+        color: '#000000',
+        bgColor: '#00e600',
+    },
+    {
+        color: '#000000',
+        bgColor: '#00b300',
+    },
+],
+[
+    {
+        color: '#000000',
+        bgColor: '#ccf5ff',
+    },
+    {
+        color: '#000000',
+        bgColor: '#80e5ff',
+    },
+    {
+        color: '#000000',
+        bgColor: '#33d6ff',
     },
     {
         color: '#000000',
@@ -41,8 +108,9 @@ export const Colors = [
     },
     {
         color: '#000000',
-        bgColor: '#cc80ff',
+        bgColor: '#00ccff',
     },
+]
 ];
 
 export const ICON_SIZE = 24;

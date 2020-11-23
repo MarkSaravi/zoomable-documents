@@ -36,13 +36,13 @@ function genParagraphs(
         cursor: CursorType,
     ) {
     const { id } = sentences;
-    const { zoomLevel, maxLevel } = levels[id];
+    const { zoomLevel, maxLevel, depth } = levels[id];
     const levelSentences = getSentencesByZoomLevel(sentences, zoomLevel);
     const orderedKeys = getOrderedSentenceKeys(levelSentences);
     const paragraphs: any[] = [];
     let paragraph: any[] = [];
     orderedKeys.forEach(key => {
-        const color = Colors[getMinLevelForSentence(levelSentences[key])];
+        const color = Colors[depth][getMinLevelForSentence(levelSentences[key])];
         const { content } = levelSentences[key];
         const contentType = getSentenceType(content);
         switch (contentType) {

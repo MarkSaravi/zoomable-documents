@@ -1,37 +1,36 @@
 /* eslint-disable import/extensions */
 
 import { v4 as uuidv4 } from 'uuid';
-import {
-    FIRST_SENTENCE_ID,
-} from '../models/constants';
 import { Sentences } from '../models/types';
+import news1 from './news00';
 
 export const newsUpdates: Sentences = {
     id: uuidv4(),
     sentences: [
+        ...news1.sentences,
         {
-            id: 'H-01-00',
+            id: 'H-02-00',
             positions: {
                 0: {
-                    after: FIRST_SENTENCE_ID,
+                    after: 'E-00-00',
                 },
             },
-            content: '<h4>First day news Headline</h4>',
+            content: '<h4>Second day news Headline</h4>',
         },
         {
-            id: 'C-01-00',
+            id: 'C-02-00',
             positions: {
                 0: {
-                    after: 'H-01-00',
+                    after: 'H-02-00',
                 },
             },
-            content: 'First day news, first level',
+            content: 'Second day news, first level',
         },
         {
-            id: 'E-01-00',
+            id: 'E-02-00',
             positions: {
                 0: {
-                    after: 'C-01-00',
+                    after: 'C-02-00',
                 },
             },
             content: '<div style="margin-top: 24px; margin-bottom: 24px;border-bottom: solid 1px black"/>',

@@ -20,7 +20,7 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
   const { zoomLevel } = levels[id];
 
   useEffect(() => {
-    console.log('\x1b[34m%s\x1b[0m', `zoomLevel: ${zoomLevel}`);
+    console.log('\x1b[34m%s\x1b[0m', `id: ${id}, zoomLevel: ${zoomLevel}`);
   }, [zoomLevel]);
 
   return (

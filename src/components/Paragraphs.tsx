@@ -1,10 +1,11 @@
+/* eslint-disable import/extensions */
 import { v4 as uuidv4 } from 'uuid';
 import React from 'react';
-import ReactHtmlParser  from 'react-html-parser';
-import { ZoomableView } from './index';
-import { Colors, END_OF_LINE } from '../../models/constants';
-import { Sentences } from '../../models/types';
-import { getMinLevelForSentence, getOrderedSentenceKeys, getSentencesByZoomLevel, getSentenceType } from '../../models/utils';
+import ReactHtmlParser from 'react-html-parser';
+import { ZoomableView } from './ZoomableView';
+import { Colors, END_OF_LINE } from '../models/constants';
+import { Sentences } from '../models/types';
+import { getMinLevelForSentence, getOrderedSentenceKeys, getSentencesByZoomLevel, getSentenceType } from '../models/utils';
 
 type Props = {
     sentences: Sentences;
@@ -14,32 +15,38 @@ type Props = {
 function toHtml(s: string | Sentences) {
     return ReactHtmlParser(s as string);
 }
-  
+
 function wrapInParagraph(paragraph:any[]) {
-    return <p style={{textAlign: 'left'}} key={uuidv4()}>{[...paragraph]}</p>;
+    return <p style={{ textAlign: 'left' }} key={uuidv4()}>{[...paragraph]}</p>;
 }
-  
+
 function genParagraphs(sentences: Sentences, zoomLevel: number) {
     const levelSentences = getSentencesByZoomLevel(sentences, zoomLevel);
     const orderedKeys = getOrderedSentenceKeys(levelSentences);
-     let paragraphs: any[] = [];
+    const paragraphs: any[] = [];
     let paragraph: any[] = [];
     orderedKeys.forEach(key => {
         const color = Colors[getMinLevelForSentence(levelSentences[key])];
-        const content = levelSentences[key].content;
+        const { content } = levelSentences[key];
         const contentType = getSentenceType(content);
         switch (contentType) {
-            case 'string':
+            case 'sentences':
+                paragraph.push(<ZoomableView sentences={content as Sentences} key={uuidv4()} />);
+                break;
+            default:
                 if (content === END_OF_LINE) {
                     paragraphs.push(wrapInParagraph(paragraph));
                     paragraph = [];
                 } else {
-                    paragraph.push (<span style={{color: color.color, backgroundColor: color.bgColor}} key={uuidv4()}>{toHtml(content)}</span>);
+                    paragraph.push(
+                        <span
+                            style={{ color: color.color, backgroundColor: color.bgColor }}
+                            key={uuidv4()}
+                        >
+                            {toHtml(content)}
+                        </span>
+                    );
                 }
-                break;
-            case 'sentences':
-                paragraph.push(<ZoomableView sentences={content as Sentences} key={uuidv4()}/>);
-                break;
         }
     });
     paragraphs.push(wrapInParagraph(paragraph));

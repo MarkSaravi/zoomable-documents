@@ -2,15 +2,11 @@
 // eslint-disable-next-line no-use-before-define
 
 import React from "react";
-import { ZoomableView } from '../components/ZoomableView';
+import ZoomableContainer from '../components/ZooambleContainer';
 import ferdowsiData from '../data/Ferdowsi';
 
 const FerdowsiPage: React.FC = () => {
-    return (
-        <div style={{ width: '800px' }}>
-            <ZoomableView sentences={ferdowsiData} />
-        </div>
-    );
+    return (<ZoomableContainer sentences={ferdowsiData} />);
 };
 
 export default FerdowsiPage;

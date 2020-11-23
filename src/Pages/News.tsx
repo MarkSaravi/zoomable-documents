@@ -3,7 +3,7 @@
 
 import React from "react";
 import { useParams } from "react-router-dom";
-import { ZoomableView } from '../components/ZoomableView';
+import ZoomableContainer from '../components/ZooambleContainer';
 import { Sentences } from "../models/types";
 import news1 from '../data/news1';
 import news2 from '../data/news2';
@@ -25,11 +25,7 @@ const NewsPage: React.FC = () => {
         default:
             news = news1;
     }
-    return (
-        <div style={{ width: '800px' }}>
-            <ZoomableView sentences={news} />
-        </div>
-    );
+    return (<ZoomableContainer sentences={news} />);
 };
 
 export default NewsPage;

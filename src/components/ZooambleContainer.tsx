@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Sentences, SentencesLevels } from "../models/types";
-import { getSentenceType } from "../models/utils";
+import { getMaxLevel, getSentenceType } from "../models/utils";
 import { ZoomableView } from './ZoomableView';
 
 type Props = {
@@ -31,6 +31,7 @@ const getNestedLevels = (
         [id]: {
             zoomLevel: 0,
             depth,
+            maxLevel: getMaxLevel(sentences),
         },
     };
 };

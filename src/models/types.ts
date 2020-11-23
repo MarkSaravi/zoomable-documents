@@ -28,6 +28,7 @@ export type SentencesLevels = {
   [id: string]: {
     zoomLevel: number;
     depth: number;
+    maxLevel: number;
   }
 }
 

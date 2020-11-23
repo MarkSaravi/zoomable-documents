@@ -1,4 +1,7 @@
 /* eslint-disable import/extensions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 import { v4 as uuidv4 } from 'uuid';
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
@@ -27,7 +30,7 @@ function genParagraphs(
         setZoomLevel: (id: string, zoomLevel: number) => void,
     ) {
     const { id } = sentences;
-    const { zoomLevel, depth } = levels[id];
+    const { zoomLevel, depth, maxLevel } = levels[id];
     const levelSentences = getSentencesByZoomLevel(sentences, zoomLevel);
     const orderedKeys = getOrderedSentenceKeys(levelSentences);
     const paragraphs: any[] = [];
@@ -54,6 +57,13 @@ function genParagraphs(
                 } else {
                     paragraph.push(
                         <span
+                            onClick={(e: React.MouseEvent<HTMLElement>) => {
+                                if (e.shiftKey && zoomLevel > 0) {
+                                    setZoomLevel(id, zoomLevel - 1);
+                                } else if (!e.shiftKey && zoomLevel < maxLevel) {
+                                    setZoomLevel(id, zoomLevel + 1);
+                                }
+                            }}
                             style={{ color: color.color, backgroundColor: color.bgColor }}
                             key={uuidv4()}
                         >

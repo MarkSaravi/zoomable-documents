@@ -4,7 +4,7 @@
 /* eslint-disable no-lonely-if */
 
 import React, { useState, useEffect, MouseEvent } from "react";
-import type { Sentences } from '../models/types';
+import type { Sentences, SentencesLevels } from '../models/types';
 import { getMaxLevel } from "../models/utils";
 import Paragraphs from './Paragraphs';
 
@@ -12,22 +12,25 @@ type CursorType = 'zoom-in' | 'zoom-out';
 
 type Props = {
   sentences: Sentences;
+  levels: SentencesLevels;
+  setZoomLevel: (id: string, zoomLevel: number) => void;
 };
 
 const ZoomableView: React.FC<Props> = (props: Props) => {
-  const { sentences } = props;
+  const { sentences, levels, setZoomLevel } = props;
+  const { id } = sentences;
   const maxLevel = getMaxLevel(sentences);
-  const [zoomLevel, setZoomLevel] = useState<number>(0);
   const [cursor, setCursor] = useState<CursorType>('zoom-in');
+  const { zoomLevel } = levels[id];
 
   const onMouseClicked = (event: MouseEvent) => {
     if (event.shiftKey) {
       if (zoomLevel > 0) {
-        setZoomLevel(zoomLevel - 1);
+        setZoomLevel(id, zoomLevel - 1);
       }
     } else {
       if (zoomLevel < maxLevel) {
-        setZoomLevel(zoomLevel + 1);
+        setZoomLevel(id, zoomLevel + 1);
       }
     }
   };
@@ -61,7 +64,8 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
       >
         <Paragraphs
           sentences={sentences}
-          zoomLevel={zoomLevel}
+          levels={levels}
+          setZoomLevel={setZoomLevel}
         />
       </section>
   );

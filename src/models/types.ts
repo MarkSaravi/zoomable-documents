@@ -24,6 +24,13 @@ export type ZoomResult = {
   level: number;
 }
 
+export type SentencesLevels = {
+  [id: string]: {
+    zoomLevel: number;
+    depth: number;
+  }
+}
+
 export interface IZoomable {
   sentences: Array<Sentence>;
   toString: () => ZoomResult;

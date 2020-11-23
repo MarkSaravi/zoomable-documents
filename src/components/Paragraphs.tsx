@@ -4,12 +4,13 @@ import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { ZoomableView } from './ZoomableView';
 import { Colors, END_OF_LINE } from '../models/constants';
-import { Sentences } from '../models/types';
+import { Sentences, SentencesLevels } from '../models/types';
 import { getMinLevelForSentence, getOrderedSentenceKeys, getSentencesByZoomLevel, getSentenceType } from '../models/utils';
 
 type Props = {
     sentences: Sentences;
-    zoomLevel: number;
+    levels: SentencesLevels;
+    setZoomLevel: (id: string, zoomLevel: number) => void;
 }
 
 function toHtml(s: string | Sentences) {
@@ -20,7 +21,13 @@ function wrapInParagraph(paragraph:any[]) {
     return <p style={{ textAlign: 'left' }} key={uuidv4()}>{[...paragraph]}</p>;
 }
 
-function genParagraphs(sentences: Sentences, zoomLevel: number) {
+function genParagraphs(
+        sentences: Sentences,
+        levels: SentencesLevels,
+        setZoomLevel: (id: string, zoomLevel: number) => void
+    ) {
+    const { id } = sentences;
+    const { zoomLevel } = levels[id];
     const levelSentences = getSentencesByZoomLevel(sentences, zoomLevel);
     const orderedKeys = getOrderedSentenceKeys(levelSentences);
     const paragraphs: any[] = [];
@@ -31,7 +38,14 @@ function genParagraphs(sentences: Sentences, zoomLevel: number) {
         const contentType = getSentenceType(content);
         switch (contentType) {
             case 'sentences':
-                paragraph.push(<ZoomableView sentences={content as Sentences} key={uuidv4()} />);
+                paragraph.push(
+                    <ZoomableView
+                        sentences={content as Sentences}
+                        levels={levels}
+                        setZoomLevel={setZoomLevel}
+                        key={uuidv4()}
+                    />
+                );
                 break;
             default:
                 if (content === END_OF_LINE) {
@@ -54,7 +68,7 @@ function genParagraphs(sentences: Sentences, zoomLevel: number) {
 }
 
 const Paragraphs: React.FC<Props> = (props: Props) => {
-    const { sentences, zoomLevel } = props;
-    return <>{genParagraphs(sentences, zoomLevel)}</>;
+    const { sentences, levels, setZoomLevel } = props;
+    return <>{genParagraphs(sentences, levels, setZoomLevel)}</>;
 };
 export default Paragraphs;

@@ -1,6 +1,4 @@
 /* eslint-disable import/extensions */
-
-import { v4 as uuidv4 } from 'uuid';
 import { Sentences } from '../models/types';
 import {
   END_OF_LINE, FIRST_SENTENCE_ID,
@@ -16,7 +14,7 @@ import {
 } from '../models/constants';
 
 const shahnameh: Sentences = {
-  id: uuidv4(),
+  id: 'ferdowsi-depth-1-0',
   sentences: [
     {
       id: ID10,
@@ -40,7 +38,7 @@ const shahnameh: Sentences = {
 };
 
 const sentences: Sentences = {
-  id: uuidv4(),
+  id: 'ferdowsi-depth-0',
   sentences: [
     {
       id: ID00,

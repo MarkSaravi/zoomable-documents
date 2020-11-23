@@ -22,6 +22,7 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
   const maxLevel = getMaxLevel(sentences);
   const [cursor, setCursor] = useState<CursorType>('zoom-in');
   const { zoomLevel } = levels[id];
+  // console.log('\x1b[34m%s\x1b[0m', `id: ${id} ,zoomLevel: ${zoomLevel}, maxLevel: ${maxLevel}`);
 
   const onMouseClicked = (event: MouseEvent) => {
     if (event.shiftKey) {

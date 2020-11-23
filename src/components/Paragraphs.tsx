@@ -17,17 +17,17 @@ function toHtml(s: string | Sentences) {
     return ReactHtmlParser(s as string);
 }
 
-function wrapInParagraph(paragraph:any[]) {
-    return <p style={{ textAlign: 'left' }} key={uuidv4()}>{[...paragraph]}</p>;
+function wrapInParagraph(paragraph:any[], depth: number) {
+    return <p style={{ textAlign: 'left', zIndex: depth * 100, position: 'relative', backgroundColor: Colors[depth].bgColor }} key={uuidv4()}>{[...paragraph]}</p>;
 }
 
 function genParagraphs(
         sentences: Sentences,
         levels: SentencesLevels,
-        setZoomLevel: (id: string, zoomLevel: number) => void
+        setZoomLevel: (id: string, zoomLevel: number) => void,
     ) {
     const { id } = sentences;
-    const { zoomLevel } = levels[id];
+    const { zoomLevel, depth } = levels[id];
     const levelSentences = getSentencesByZoomLevel(sentences, zoomLevel);
     const orderedKeys = getOrderedSentenceKeys(levelSentences);
     const paragraphs: any[] = [];
@@ -49,7 +49,7 @@ function genParagraphs(
                 break;
             default:
                 if (content === END_OF_LINE) {
-                    paragraphs.push(wrapInParagraph(paragraph));
+                    paragraphs.push(wrapInParagraph(paragraph, depth));
                     paragraph = [];
                 } else {
                     paragraph.push(
@@ -63,7 +63,7 @@ function genParagraphs(
                 }
         }
     });
-    paragraphs.push(wrapInParagraph(paragraph));
+    paragraphs.push(wrapInParagraph(paragraph, depth));
     return paragraphs;
 }
 

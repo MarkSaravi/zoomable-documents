@@ -10,25 +10,34 @@ type Props = {
     sentences: Sentences;
 };
 
-const getNestedLevels = (sentences: Sentences, depth: number, levels: SentencesLevels) => {
+const getNestedLevels = (
+        sentences: Sentences,
+        depth: number,
+        levels: SentencesLevels
+    ): SentencesLevels => {
     const { id, sentences: snts } = sentences;
-    levels[id] = {
-        zoomLevel: 0,
-        depth,
+    let l = {
+        ...levels
     };
+
     snts.forEach(sentence => {
         const { content } = sentence;
         if (getSentenceType(content) === 'sentences') {
-            getNestedLevels(content as Sentences, depth + 1, levels);
+            l = getNestedLevels(content as Sentences, depth + 1, l);
         }
     });
+    return {
+        ...l,
+        [id]: {
+            zoomLevel: 0,
+            depth,
+        },
+    };
 };
 
 const ZoomableContainer: React.FC<Props> = (props: Props) => {
     const { sentences } = props;
-    const l = {};
-    getNestedLevels(sentences, 0, l);
-    const [levels, setLevels] = useState<SentencesLevels>(l);
+    const [levels, setLevels] = useState<SentencesLevels>(getNestedLevels(sentences, 0, {}));
     const setZoomLevel = (id: string, zoomLevel: number) => {
         setLevels({
             ...levels,
@@ -40,7 +49,7 @@ const ZoomableContainer: React.FC<Props> = (props: Props) => {
     };
 
     useEffect(() => {
-        console.log('\x1b[34m%s\x1b[0m', JSON.stringify(levels));
+        console.log('\x1b[34m%s\x1b[0m', `${JSON.stringify(levels)}`);
     }, [levels]);
 
     return (

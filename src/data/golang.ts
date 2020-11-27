@@ -6,6 +6,8 @@ import {
   FIRST_SENTENCE_ID,
 } from '../models/constants';
 
+const PRE = '<pre style="background-color: #efefef; padding-bottom: 1rem">';
+
 const firstexample: Sentences = {
     id: 'first-example-zoomable',
     sentences: [
@@ -15,7 +17,7 @@ const firstexample: Sentences = {
                 0: { after: FIRST_SENTENCE_ID },
             },
             content:
-`<pre>
+`${PRE}
     t := i.(T)
 </pre>`,
         },
@@ -25,7 +27,7 @@ const firstexample: Sentences = {
                 1: { after: FIRST_SENTENCE_ID },
             },
             content:
-`<pre>
+`${PRE}
     var i interface{} = "hello"
 
     s := i.(string)
@@ -41,7 +43,7 @@ const firstexample: Sentences = {
                 2: { after: FIRST_SENTENCE_ID },
             },
             content:
-`<pre>
+`${PRE}
     package main
 
     import "fmt"
@@ -89,7 +91,7 @@ const typeassertion: Sentences = {
         },
         {
             id: 'panic-without-second-param',
-            content: 'This statement asserts that the interface value i holds the concrete type T and assigns the underlying T value to the variable t. If i does not hold a T, the statement will trigger a panic. Zoom above example to see panic and full program.',
+            content: 'This statement asserts that the interface value i holds the concrete type T and assigns the underlying T value to the variable t. If i does not hold a T, the statement will trigger a panic. <b><i>Zoom above example to see panic and full program.</i></b>',
             positions: {
                 1: {
                     after: 'first-example-obj',

@@ -4,19 +4,24 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import "./App.css";
-
-import Ferdowsi from "./Pages/Ferdowsi";
-import News from './Pages/News';
-import ColorsTest from './Pages/ColorsTest';
+import Zoomable from "./components/Zooamble";
+import ferdowsi from './data/Ferdowsi';
+import colors from './data/color-tests';
+import news00 from './data/news00';
+import news01 from './data/news01';
+import news02 from './data/news02';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Ferdowsi} exact />
-          <Route path="/news/:day" component={News} />
-          <Route path="/colors" component={ColorsTest} />
+          <Route path="/" component={() => (<Zoomable sentences={ferdowsi} />)} />
+          <Route path="/news/0" component={() => (<Zoomable sentences={news00} />)} />
+          <Route path="/news/1" component={() => (<Zoomable sentences={news01} />)} />
+          <Route path="/news/2" component={() => (<Zoomable sentences={news02} />)} />
+          <Route path="/colors" component={() => (<Zoomable sentences={colors} />)} />
+          <Route path="/golang" component={() => (<Zoomable sentences={ferdowsi} />)} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -11,10 +11,10 @@ type Props = {
 };
 
 const getNestedLevels = (
-        sentences: Sentences,
-        depth: number,
-        levels: SentencesLevels
-    ): SentencesLevels => {
+    sentences: Sentences,
+    depth: number,
+    levels: SentencesLevels
+): SentencesLevels => {
     const { id, sentences: snts } = sentences;
     let l = {
         ...levels

@@ -80,6 +80,15 @@ const sentences: Sentences = {
       content: 'Ferdowsi is celebrated as the most influential figure in Persian literature and one of the greatest in the history of literature.',
     },
     {
+      id: ID07,
+      positions: {
+        2: {
+          after: ID01,
+        },
+      },
+      content: 'Ferdowsi is celebrated as the most influential figure in Persian literature and one of the greatest in the history of literature.',
+    },
+    {
       id: ID02,
       positions: {
         1: {
@@ -89,7 +98,7 @@ const sentences: Sentences = {
           after: FIRST_SENTENCE_ID,
         },
       },
-      content: 'Abul-Qâsem Ferdowsi Tusi (935 or 940–between 1019 and 1026), or just',
+      content: 'Abul-Qâsem Ferdowsi Tusi (935 or 940–between 1019 and 1026), or just ',
     },
     {
       id: ID03,

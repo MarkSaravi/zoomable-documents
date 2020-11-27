@@ -91,7 +91,7 @@ const typeassertion: Sentences = {
         },
         {
             id: 'panic-without-second-param',
-            content: 'This statement asserts that the interface value i holds the concrete type T and assigns the underlying T value to the variable t. If i does not hold a T, the statement will trigger a panic. <b><i>Zoom above example to see panic and full program.</i></b>',
+            content: 'The above example asserts that the interface value i holds the concrete type T and assigns the underlying T value to the variable t. If i does not hold a T, the statement will trigger a panic. <b><i>Zoom above example to see panic and full program.</i></b>',
             positions: {
                 1: {
                     after: 'first-example-obj',
@@ -110,7 +110,7 @@ const typeassertion: Sentences = {
             positions: {
                 0: { after: 'first-example-obj-eol' },
             },
-            content: 'To test whether an interface value holds a specific type, a type assertion can return two values',
+            content: 'If the interface does not hold the specific type it triggers panic. To avoid panic we can use the following pattern.',
         },
         {
             id: 'assertion-succeeded-eol',

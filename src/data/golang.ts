@@ -113,6 +113,42 @@ const secondexample: Sentences = {
     }
                 </pre>`,
         },
+        {
+            id: 'second-example-zoom-1-eol',
+            content: END_OF_LINE,
+            positions: {
+                1: { after: 'second-example-zoom-1' },
+                2: { after: 'second-example-zoom-2' },
+            },
+        },
+        {
+            id: 'second-example-zoom-sentence',
+            content: 'To test whether an interface value holds a specific type, a type assertion can return two values: the underlying value and a boolean value that reports whether the assertion succeeded.',
+            positions: {
+                1: { after: 'second-example-zoom-1-eol' },
+                2: { after: 'second-example-zoom-1-eol' },
+            }
+        },
+        {
+            id: 'second-example-zoom-sentence-eol',
+            content: END_OF_LINE,
+            positions: {
+                1: { after: 'second-example-zoom-sentence' },
+                2: { after: 'second-example-zoom-sentence' },
+            }
+        },
+        {
+            id: 'second-example-zoom-sentence-2',
+            content: `If i holds a T, then t will be the underlying value and ok will be true.<br>
+
+            If not, ok will be false and t will be the zero value of type T, and no panic occurs.<br>
+            
+            Note the similarity between this syntax and that of reading from a map.`,
+            positions: {
+                1: { after: 'second-example-zoom-sentence-eol' },
+                2: { after: 'second-example-zoom-sentence-eol' },
+            }
+        },
     ],
 };
 

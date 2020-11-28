@@ -54,7 +54,7 @@ const ZoomableContainer: React.FC<Props> = (props: Props) => {
     }, [levels]);
 
     return (
-        <div style={{ width: '800px' }}>
+        <div style={{ width: '800px', margin: '64px' }}>
             <ZoomableView
                 sentences={sentences}
                 levels={levels}

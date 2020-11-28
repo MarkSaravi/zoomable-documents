@@ -269,10 +269,18 @@ const typeassertion: Sentences = {
     id: 'type-assertion-id',
     sentences: [
         {
-            id: 'main-defenition',
+            id: 'type-assertion-title',
             positions: {
                 0: { after: FIRST_SENTENCE_ID },
                 1: { after: FIRST_SENTENCE_ID },
+            },
+            content: '<h4>Type Assertion</h4>'
+        },
+        {
+            id: 'main-defenition',
+            positions: {
+                0: { after: 'type-assertion-title' },
+                1: { after: 'type-assertion-title' },
             },
             content: 'A type assertion provides access to an interface value\'s underlying concrete value.'
         },

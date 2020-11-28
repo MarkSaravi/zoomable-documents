@@ -221,6 +221,14 @@ const typeswitche: Sentences = {
             content: 'A type switch is a construct that permits several type assertions in series.',
             positions: {
                 1: { after: FIRST_SENTENCE_ID },
+                2: { after: FIRST_SENTENCE_ID },
+            }
+        },
+        {
+            id: 'typeswitch-level-2-top-sentence',
+            content: 'A type switch is like a regular switch statement, but the cases in a type switch specify types (not values), and those values are compared against the type of the value held by the given interface value.',
+            positions: {
+                2: { after: 'typeswitch-level-1' },
             }
         },
         {
@@ -228,6 +236,7 @@ const typeswitche: Sentences = {
             content: END_OF_LINE,
             positions: {
                 1: { after: 'typeswitch-level-1' },
+                2: { after: 'typeswitch-level-2-top-sentence' },
             }
         },
         {
@@ -235,6 +244,14 @@ const typeswitche: Sentences = {
             content: typeswitchexample,
             positions: {
                 1: { after: 'typeswitch-level-eol' },
+                2: { after: 'typeswitch-level-eol' },
+            },
+        },
+        {
+            id: 'typeswitch-level-2-bot-sentence',
+            content: 'The declaration in a type switch has the same syntax as a type assertion i.(T), but the specific type T is replaced with the keyword type.',
+            positions: {
+                2: { after: 'type-switch-example-obj' },
             },
         },
     ]

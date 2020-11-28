@@ -217,11 +217,19 @@ const typeswitche: Sentences = {
             }
         },
         {
-            id: 'typeswitch-level-1',
-            content: 'A type switch is a construct that permits several type assertions in series.',
+            id: 'typeswitch-level-1-title',
+            content: '<h4>Type Switch</h4>',
             positions: {
                 1: { after: FIRST_SENTENCE_ID },
                 2: { after: FIRST_SENTENCE_ID },
+            }
+        },
+        {
+            id: 'typeswitch-level-1',
+            content: 'A type switch is a construct that permits several type assertions in series.',
+            positions: {
+                1: { after: 'typeswitch-level-1-title' },
+                2: { after: 'typeswitch-level-1-title' },
             }
         },
         {

@@ -116,6 +116,94 @@ const secondexample: Sentences = {
     ],
 };
 
+const typeswitchexample: Sentences = {
+    id: 'typeswitch-example-zoomable',
+    sentences: [
+        {
+            id: 'typeswitch-example',
+            positions: {
+                0: { after: FIRST_SENTENCE_ID },
+            },
+            content:
+                `${PRE}
+    func do(i interface{}) {
+        switch v := i.(type) {
+        case int:
+            fmt.Printf("Twice %v is %v\\n", v, v*2)
+        case string:
+            fmt.Printf("%q is %v bytes long\\n", v, len(v))
+        default:
+            fmt.Printf("I don't know about type %T!\\n", v)
+        }
+    }
+                </pre>`,
+        },
+        {
+            id: 'typeswitch-example-zoom-1',
+            positions: {
+                1: { after: FIRST_SENTENCE_ID },
+            },
+            content:
+                `${PRE}
+    package main
+    
+    import "fmt"
+
+    func do(i interface{}) {
+        switch v := i.(type) {
+        case int:
+            fmt.Printf("Twice %v is %v\\n", v, v*2)
+        case string:
+            fmt.Printf("%q is %v bytes long\\n", v, len(v))
+        default:
+            fmt.Printf("I don't know about type %T!\\n", v)
+        }
+    }
+    
+    func main() {
+        do(21)
+        do("hello")
+        do(true)
+    }
+                </pre>`,
+        },
+    ],
+};
+
+const typeswitche: Sentences = {
+    id: 'type-switch',
+    sentences: [
+        {
+            id: 'typeswitch-description',
+            content: 'You can use type assertion with <b>Type Switch</b>',
+            positions: {
+                0: { after: FIRST_SENTENCE_ID },
+            }
+        },
+        {
+            id: 'typeswitch-level-1',
+            content: 'A type switch is a construct that permits several type assertions in series.',
+            positions: {
+                1: { after: FIRST_SENTENCE_ID },
+            }
+        },
+        {
+            id: 'typeswitch-level-eol',
+            content: END_OF_LINE,
+            positions: {
+                1: { after: 'typeswitch-level-1' },
+            }
+        },
+        {
+            id: 'type-switch-example-obj',
+            content: typeswitchexample,
+            positions: {
+                1: { after: 'typeswitch-level-eol' },
+            },
+        },
+    ]
+};
+
 const typeassertion: Sentences = {
     id: 'type-assertion-id',
     sentences: [
@@ -189,6 +277,22 @@ const typeassertion: Sentences = {
                 0: { after: 'assertion-succeeded-eol' },
                 1: { after: 'assertion-succeeded-eol' },
             },
+        },
+        {
+            id: 'second-example-eol',
+            content: END_OF_LINE,
+            positions: {
+                0: { after: 'second-example' },
+                1: { after: 'second-example' },
+            },
+        },
+        {
+            id: 'type-switch-obj',
+            content: typeswitche,
+            positions: {
+                0: { after: 'second-example-eol' },
+                1: { after: 'second-example-eol' },
+            }
         }
     ],
 };

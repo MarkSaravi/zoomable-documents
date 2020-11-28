@@ -159,7 +159,7 @@ const typeswitchexample: Sentences = {
             fmt.Printf("I don't know about type %T!\\n", v)
         }
     }
-    
+
     func main() {
         do(21)
         do("hello")
@@ -263,10 +263,17 @@ const typeassertion: Sentences = {
             content: ' To avoid panic we can use the following pattern.',
         },
         {
+            id: 'assertion-succeeded-look-below-example',
+            content: ' Zoom below example',
+            positions: {
+                1: { after: 'assertion-succeeded-2' }
+            }
+        },
+        {
             id: 'assertion-succeeded-eol',
             positions: {
                 0: { after: 'assertion-succeeded-2' },
-                1: { after: 'assertion-succeeded-2' },
+                1: { after: 'assertion-succeeded-look-below-example' },
             },
             content: END_OF_LINE,
         },

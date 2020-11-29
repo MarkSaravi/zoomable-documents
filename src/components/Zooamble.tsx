@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 // eslint-disable-next-line no-use-before-define
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Sentences, SentencesLevels } from "../models/types";
 import { getMaxLevel, getSentenceType } from "../models/utils";
 import { ZoomableView } from './ZoomableView';
@@ -48,10 +48,6 @@ const ZoomableContainer: React.FC<Props> = (props: Props) => {
             },
         });
     };
-
-    useEffect(() => {
-        console.log('\x1b[34m%s\x1b[0m', `${JSON.stringify(levels)}`);
-    }, [levels]);
 
     return (
         <div style={{ width: '800px', margin: '64px' }}>

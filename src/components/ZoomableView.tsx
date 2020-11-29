@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-lonely-if */
 
-import React, { useEffect } from "react";
+import React from "react";
 import type { Sentences, SentencesLevels } from '../models/types';
 import Paragraphs from './Paragraphs';
 
@@ -19,18 +19,15 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
 
   const { zoomLevel } = levels[id];
 
-  useEffect(() => {
-    console.log('\x1b[34m%s\x1b[0m', `id: ${id}, zoomLevel: ${zoomLevel}`);
-  }, [zoomLevel]);
-
   return (
-      <section>
-        <Paragraphs
-          sentences={sentences}
-          levels={levels}
-          setZoomLevel={setZoomLevel}
-        />
-      </section>
+    <section style={{ position: 'relative' }}>
+      <span style={{ color: 'red', position: 'absolute', left: 'calc(100% - 16px)', top: 0 }}>{zoomLevel + 1}</span>
+      <Paragraphs
+        sentences={sentences}
+        levels={levels}
+        setZoomLevel={setZoomLevel}
+      />
+    </section>
   );
 };
 

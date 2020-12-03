@@ -6,7 +6,14 @@ import {
 } from '../models/constants';
 import { isSentenceType } from '../models/utils';
 
-const tabDecorator: Decorator = (content) => {
+const tabDecoratorMargin: Decorator = (content) => {
+    if (isSentenceType(content)) {
+        return content;
+    }
+    return `<span style="margin-right: 16px;">${content}</span>`;
+};
+
+const tabDecoratorBold: Decorator = (content) => {
     if (isSentenceType(content)) {
         return content;
     }
@@ -20,37 +27,37 @@ const strtimeline: Sentences = {
     sentences: [
         {
             id: 'strtmh-0',
-            content: 'Dec 1941&nbsp;&nbsp;',
+            content: 'Dec 1941',
             positions: {
                 0: {
                     after: FIRST_SENTENCE_ID,
-                    decorator: tabDecorator,
+                    decorators: [tabDecoratorMargin, tabDecoratorBold],
                 },
-                1: { after: FIRST_SENTENCE_ID },
-                2: { after: FIRST_SENTENCE_ID },
+                1: { after: FIRST_SENTENCE_ID, decorators: [tabDecoratorMargin] },
+                2: { after: FIRST_SENTENCE_ID, decorators: [tabDecoratorMargin] },
             }
         },
         {
             id: 'strtmh-1',
-            content: 'May 1942&nbsp;&nbsp;',
+            content: 'May 1942',
             positions: {
-                0: { after: 'strtmh-0' },
+                0: { after: 'strtmh-0', decorators: [tabDecoratorMargin] },
                 1: {
                     after: 'strtmh-0',
-                    decorator: tabDecorator,
+                    decorators: [tabDecoratorMargin, tabDecoratorBold],
                 },
-                2: { after: 'strtmh-0' },
+                2: { after: 'strtmh-0', decorators: [tabDecoratorMargin] },
             }
         },
         {
             id: 'strtmh-2',
-            content: 'Aug 1942&nbsp;&nbsp;',
+            content: 'Aug 1942',
             positions: {
-                0: { after: 'strtmh-1' },
-                1: { after: 'strtmh-1' },
+                0: { after: 'strtmh-1', decorators: [tabDecoratorMargin] },
+                1: { after: 'strtmh-1', decorators: [tabDecoratorMargin] },
                 2: {
                     after: 'strtmh-1',
-                    decorator: tabDecorator,
+                    decorators: [tabDecoratorMargin, tabDecoratorBold],
                 },
             }
         },

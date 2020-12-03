@@ -1,4 +1,4 @@
-type Content = string | Sentences;
+export type Content = string | Sentences;
 type SentenceId = string;
 
 type After = SentenceId;
@@ -6,7 +6,7 @@ type After = SentenceId;
 export type Decorator = (content: Content) => Content;
 type LevelPosition = {
   after: After;
-  decorator?: Decorator;
+  decorators?: Decorator[];
 };
 
 export type Sentence = {

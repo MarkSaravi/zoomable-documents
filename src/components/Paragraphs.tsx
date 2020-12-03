@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { ZoomableView } from './ZoomableView';
 import { Colors, END_OF_LINE } from '../models/constants';
-import { Sentences, SentencesLevels } from '../models/types';
+import { Content, Sentences, SentencesLevels, Decorator } from '../models/types';
 import { getMinLevelForSentence, getOrderedSentenceKeys, getSentencesByZoomLevel, getSentenceType } from '../models/utils';
 
 type CursorType = 'zoom-in' | 'zoom-out';
@@ -25,6 +25,17 @@ function toHtml(s: string | Sentences) {
 
 function wrapInParagraph(paragraph: any[]) {
     return <p style={{ textAlign: 'left' }} key={uuidv4()}>{[...paragraph]}</p>;
+}
+
+function appyDecorators(content: Content, decorators?: Decorator[]) {
+    if (!decorators) {
+        return content;
+    }
+    let decorated: Content = content;
+    decorators.forEach(decorator => {
+        decorated = decorator(decorated);
+    });
+    return decorated;
 }
 
 function genParagraphs(
@@ -44,8 +55,8 @@ function genParagraphs(
     orderedKeys.forEach(key => {
         const color = Colors[depth][getMinLevelForSentence(levelSentences[key])];
         const { content: rawContent, positions } = levelSentences[key];
-        const { decorator } = positions[zoomLevel];
-        const content = decorator ? decorator(rawContent) : rawContent;
+        const { decorators } = positions[zoomLevel];
+        const content = appyDecorators(rawContent, decorators);
         const contentType = getSentenceType(content);
         switch (contentType) {
             case 'sentences':

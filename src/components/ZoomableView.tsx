@@ -6,7 +6,7 @@
 import React from "react";
 import type { Sentences, SentencesLevels } from '../models/types';
 import { getMaxLevel } from "../models/utils";
-import Paragraphs from './Paragraphs';
+import Partial from './Partial';
 
 type Props = {
   sentences: Sentences;
@@ -24,7 +24,7 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
   return (
     <section style={{ position: 'relative' }}>
       <span style={{ color: 'red', position: 'relative', right: '0px', top: 0 }}>{zoomLevel + 1}/{maxLevel + 1}</span>
-      <Paragraphs
+      <Partial
         sentences={sentences}
         levels={levels}
         setZoomLevel={setZoomLevel}

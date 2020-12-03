@@ -98,7 +98,7 @@ function genParagraphs(
     return paragraphs;
 }
 
-const Paragraphs: React.FC<Props> = (props: Props) => {
+const Partial: React.FC<Props> = (props: Props) => {
     const { sentences, levels, setZoomLevel } = props;
     const [cursor, setCursor] = useState<CursorType>('zoom-in');
 
@@ -120,4 +120,4 @@ const Paragraphs: React.FC<Props> = (props: Props) => {
 
     return (<>{genParagraphs(sentences, levels, setZoomLevel, onMouseEntered, onMouseMoved, cursor)}</>);
 };
-export default Paragraphs;
+export default Partial;

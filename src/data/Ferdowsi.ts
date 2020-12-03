@@ -139,20 +139,27 @@ const Ferdowsi: Sentences = {
       }
     },
     {
+      id: '2-1',
+      content: 'Ferdowsi has a unique place in Persian history because of the strides he made in reviving and regenerating the Persian language and cultural traditions.',
+      positions: {
+        0: { after: '2-2' },
+        1: { after: '2-0' }
+      }
+    },
+    {
       id: '2-0',
       content: 'Abul-Qâsem Ferdowsi Tusi (ابوالقاسم فردوسی توسی) (935 or 940–between 1019 and 1026), or just Ferdowsi is celebrated as the most influential figure in Persian literature and one of the greatest in the history of literature.',
       positions: {
-        0: { after: '2-2' },
         1: { after: '2-2' },
       }
     },
     {
-      id: '2-1',
-      content: 'Ferdowsi has a unique place in Persian history because of the strides he made in reviving and regenerating the Persian language and cultural traditions. His works are cited as a crucial component in the persistence of the Persian language, as those works allowed much of the tongue to remain codified and intact.',
+      id: '2-3',
+      content: 'His works are cited as a crucial component in the persistence of the Persian language, as those works allowed much of the tongue to remain codified and intact.',
       positions: {
-        1: { after: '2-0' },
+        1: { after: '2-1' },
       }
-    }
+    },
   ],
 };
 

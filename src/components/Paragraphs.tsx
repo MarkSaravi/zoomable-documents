@@ -24,7 +24,7 @@ function toHtml(s: string | Sentences) {
 }
 
 function wrapInParagraph(paragraph: any[]) {
-    return <span style={{ textAlign: 'left', float: 'left' }} key={uuidv4()}>{[...paragraph]}</span>;
+    return <p style={{ textAlign: 'left' }} key={uuidv4()}>{[...paragraph]}</p>;
 }
 
 function genParagraphs(

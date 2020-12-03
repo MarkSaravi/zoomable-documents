@@ -132,7 +132,7 @@ const Ferdowsi: Sentences = {
   sentences: [
     {
       id: '2-2',
-      content: '<h2>Ferdowsi</h1>',
+      content: '<h4>Ferdowsi</h2>',
       positions: {
         0: { after: FIRST_SENTENCE_ID },
         1: { after: FIRST_SENTENCE_ID },
@@ -160,10 +160,18 @@ const shahnameh: Sentences = {
   id: 'shahnameh',
   sentences: [
     {
+      id: '1-6',
+      content: '<h4>Shahnameh</h2>',
+      positions: {
+        0: { after: FIRST_SENTENCE_ID },
+        1: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
       id: '1-1',
       content: `Shahnameh ("Book of Kings") is one of the world's longest epic poems created by a single poet, and the national epic of Greater Iran.`,
       positions: {
-        0: { after: FIRST_SENTENCE_ID },
+        0: { after: '1-6' },
         1: { after: '1-5' },
       }
     },
@@ -176,7 +184,7 @@ const shahnameh: Sentences = {
       }
     },
     {
-      id: '1-3',
+      id: '1-4',
       content: shahnamehpictures,
       positions: {
         0: { after: '1-2' },
@@ -191,9 +199,9 @@ const shahnameh: Sentences = {
     },
     {
       id: '1-4',
-      content: `The Shahnameh is a long epic poem written between c. 977 and 1010 CE and is the national epic of Greater Iran. Consisting of some 50,000 "distichs" or couplets (two-line verses), the Shahnameh is one of the world's longest epic poems. It tells mainly the mythical and to some extent the historical past of the Persian Empire from the creation of the world until the Muslim conquest in the seventh century. Iran, Azerbaijan, Afghanistan and the greater region influenced by Persian culture such as Georgia, Armenia, Turkey and Dagestan celebrate this national epic.`,
+      content: `The <b>Shahnameh</b> is a long epic poem written between c. 977 and 1010 CE and is the national epic of Greater Iran. Consisting of some 50,000 "distichs" or couplets (two-line verses), the Shahnameh is one of the world's longest epic poems. It tells mainly the mythical and to some extent the historical past of the Persian Empire from the creation of the world until the Muslim conquest in the seventh century. Iran, Azerbaijan, Afghanistan and the greater region influenced by Persian culture such as Georgia, Armenia, Turkey and Dagestan celebrate this national epic.`,
       positions: {
-        1: { after: FIRST_SENTENCE_ID }
+        1: { after: '1-6' }
       }
     },
     {

@@ -4,6 +4,7 @@ import { Sentences } from '../models/types';
 import {
   FIRST_SENTENCE_ID,
 } from '../models/constants';
+import battles from './ww2-battles';
 
 const DIVIDER = '<div style="width: 100%; border-bottom: solid 2px black; margin: 16px"/>';
 
@@ -151,6 +152,13 @@ const timeline: Sentences = {
             content: taskforce,
             positions: {
                 0: { after: 'str-con' },
+            },
+        },
+        {
+            id: 'str-bat',
+            content: battles,
+            positions: {
+                0: { after: 'str-tf' },
             },
         },
     ],

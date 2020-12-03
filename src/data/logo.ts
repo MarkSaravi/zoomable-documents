@@ -1,13 +1,14 @@
 /* eslint-disable import/extensions */
+/* eslint-disable max-len */
 
 import { Sentences, Sentence } from '../models/types';
 import {
   FIRST_SENTENCE_ID,
 } from '../models/constants';
 
-const WHITE_BRICK = `<img src="/white-block-half.png"  style="width: 30px; height: 20px" alt="" crossorigin />`;
-const GREEN_BRICK = `<img src="/green-block-half.png"  style="width: 30px; height: 20px" alt="" crossorigin />`;
-const GRAY_BRICK = `<img src="/gray-block-half.png"  style="width: 30px; height: 20px" alt="" crossorigin />`;
+const WHITE_BRICK = `<img src="/white-block-half.png"  style="width: 30px; height: 20px" alt=""  />`;
+// const GREEN_BRICK = `<img src="/green-block-half.png"  style="width: 30px; height: 20px" alt=""  />`;
+// const GRAY_BRICK = `<img src="/gray-block-half.png"  style="width: 30px; height: 20px" alt=""  />`;
 
 const addLevel1 = (sentences: Sentences): Sentences => {
     return sentences;

@@ -8,6 +8,34 @@ import {
 
 // depth-sen
 
+const shahnamehpicturescarosel: Sentences = {
+  id: 'shahnamehpictures',
+  sentences: [
+    {
+      id: '3-0',
+      content: '<img src="/shahnameh00.jpg" style="width: 150px; height: 150px;"  alt=""  />',
+      positions: {
+        0: { after: FIRST_SENTENCE_ID },
+        1: { after: FIRST_SENTENCE_ID },
+      }
+    },
+  ]
+};
+
+const shahnamehpictures: Sentences = {
+  id: 'shahnamehpictures',
+  sentences: [
+    {
+      id: '3-0',
+      content: '<img src="/shahnameh00.jpg" style="width: 200px; height: 200px;"  alt=""  />',
+      positions: {
+        0: { after: FIRST_SENTENCE_ID },
+        1: { after: FIRST_SENTENCE_ID },
+      }
+    },
+  ]
+};
+
 const Ferdowsi: Sentences = {
   id: 'ferdowsi',
   sentences: [
@@ -42,15 +70,21 @@ const shahnameh: Sentences = {
     },
     {
       id: '1-3',
-      content: '<img src="/shahnameh3.jpg" style="width: 200px; height: 200px;"  alt=""  />',
+      content: shahnamehpictures,
       positions: {
         0: { after: '1-2' },
+      }
+    },
+    {
+      id: '1-3',
+      content: shahnamehpicturescarosel,
+      positions: {
         1: { after: '1-2' },
       }
     },
     {
       id: '1-4',
-      content: `The Shahnameh is a long epic poem written by the Persian poet Ferdowsi between c. 977 and 1010 CE and is the national epic of Greater Iran. Consisting of some 50,000 "distichs" or couplets (two-line verses), the Shahnameh is one of the world's longest epic poems. It tells mainly the mythical and to some extent the historical past of the Persian Empire from the creation of the world until the Muslim conquest in the seventh century. Iran, Azerbaijan, Afghanistan and the greater region influenced by Persian culture such as Georgia, Armenia, Turkey and Dagestan celebrate this national epic.`,
+      content: `The Shahnameh is a long epic poem written between c. 977 and 1010 CE and is the national epic of Greater Iran. Consisting of some 50,000 "distichs" or couplets (two-line verses), the Shahnameh is one of the world's longest epic poems. It tells mainly the mythical and to some extent the historical past of the Persian Empire from the creation of the world until the Muslim conquest in the seventh century. Iran, Azerbaijan, Afghanistan and the greater region influenced by Persian culture such as Georgia, Armenia, Turkey and Dagestan celebrate this national epic.`,
       positions: {
         1: { after: FIRST_SENTENCE_ID }
       }

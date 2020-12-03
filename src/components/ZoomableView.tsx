@@ -23,7 +23,7 @@ const ZoomableView: React.FC<Props> = (props: Props) => {
 
   return (
     <section style={{ position: 'relative' }}>
-      <span style={{ color: 'red', position: 'absolute', left: '100%', top: 0 }}>{zoomLevel + 1}/{maxLevel + 1}</span>
+      <span style={{ color: 'red', position: 'relative', right: '0px', top: 0 }}>{zoomLevel + 1}/{maxLevel + 1}</span>
       <Paragraphs
         sentences={sentences}
         levels={levels}

@@ -13,7 +13,7 @@ const shahnamehpicturescarosel: Sentences = {
   sentences: [
     {
       id: '4-0',
-      content: '<img src="/shahnameh00.jpg" style="height: 150px;"  alt=""  />',
+      content: '<img src="/shahnameh00.jpg" style="height: 150px;"  alt="" />',
       positions: {
         0: { after: FIRST_SENTENCE_ID },
       }
@@ -131,12 +131,28 @@ const Ferdowsi: Sentences = {
   id: 'ferdowsi',
   sentences: [
     {
+      id: '2-2',
+      content: '<h2>Ferdowsi</h1>',
+      positions: {
+        0: { after: FIRST_SENTENCE_ID },
+        1: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
       id: '2-0',
       content: 'Abul-Qâsem Ferdowsi Tusi (ابوالقاسم فردوسی توسی) (935 or 940–between 1019 and 1026), or just Ferdowsi is celebrated as the most influential figure in Persian literature and one of the greatest in the history of literature.',
       positions: {
-        0: { after: FIRST_SENTENCE_ID },
+        0: { after: '2-2' },
+        1: { after: '2-2' },
       }
     },
+    {
+      id: '2-1',
+      content: 'Ferdowsi has a unique place in Persian history because of the strides he made in reviving and regenerating the Persian language and cultural traditions. His works are cited as a crucial component in the persistence of the Persian language, as those works allowed much of the tongue to remain codified and intact.',
+      positions: {
+        1: { after: '2-0' },
+      }
+    }
   ],
 };
 

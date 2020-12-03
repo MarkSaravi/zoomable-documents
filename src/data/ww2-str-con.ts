@@ -22,6 +22,7 @@ const strtimeline: Sentences = {
             content: 'Dec 1941&nbsp;&nbsp;',
             positions: {
                 1: { after: FIRST_SENTENCE_ID },
+                2: { after: FIRST_SENTENCE_ID },
             }
         },
         {
@@ -36,14 +37,31 @@ const strtimeline: Sentences = {
             content: 'May 1942&nbsp;&nbsp;',
             positions: {
                 0: { after: 'strtmh-0-b' },
+                2: { after: 'strtmh-0' },
+            }
+        },
+        {
+            id: 'strtmh-2-b',
+            content: '<b>Aug 1942</b>&nbsp;&nbsp;',
+            positions: {
+                2: { after: 'strtmh-1' },
+            }
+        },
+        {
+            id: 'strtmh-2',
+            content: 'Aug 1942&nbsp;&nbsp;',
+            positions: {
+                0: { after: 'strtmh-1' },
+                1: { after: 'strtmh-1-b' },
             }
         },
         {
             id: 'strtmhend',
             content: '<br>',
             positions: {
-                0: { after: 'strtmh-1' },
-                1: { after: 'strtmh-1-b' },
+                0: { after: 'strtmh-2' },
+                1: { after: 'strtmh-2' },
+                2: { after: 'strtmh-2-b' },
             }
         },
         {
@@ -54,10 +72,17 @@ const strtimeline: Sentences = {
             }
         },
         {
-            id: 'strtm-3',
+            id: 'strtm-2',
             content: 'The Japanese made two attempts to continue their strategic initiative, and offensively extend their outer defensive perimeter in the south and central Pacific to where they could threaten Australia and Hawaii or the U.S. West Coast.',
             positions: {
                 1: { after: 'strtmhend' }
+            }
+        },
+        {
+            id: 'strtm-3',
+            content: `By August, the Japanese had about 900 naval troops on Tulagi and nearby islands and 2,800 personnel (2,200 being Korean forced laborers and trustees as well as Japanese construction specialists) on Guadalcanal`,
+            positions: {
+                2: { after: 'strtmhend' }
             }
         },
     ]

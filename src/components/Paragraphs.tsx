@@ -43,7 +43,9 @@ function genParagraphs(
     let paragraph: any[] = [];
     orderedKeys.forEach(key => {
         const color = Colors[depth][getMinLevelForSentence(levelSentences[key])];
-        const { content } = levelSentences[key];
+        const { content: rawContent, positions } = levelSentences[key];
+        const { decorator } = positions[zoomLevel];
+        const content = decorator ? decorator(rawContent) : rawContent;
         const contentType = getSentenceType(content);
         switch (contentType) {
             case 'sentences':

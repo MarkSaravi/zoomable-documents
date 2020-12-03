@@ -1,15 +1,18 @@
+type Content = string | Sentences;
 type SentenceId = string;
 
 type After = SentenceId;
 
+export type Decorator = (content: Content) => Content;
 type LevelPosition = {
   after: After;
+  decorator?: Decorator;
 };
 
 export type Sentence = {
   id: SentenceId;
   positions: { [LevelId: number]: LevelPosition };
-  content: string | Sentences;
+  content: Content;
 };
 
 export type Sentences = {

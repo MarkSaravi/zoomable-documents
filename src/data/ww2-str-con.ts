@@ -1,9 +1,17 @@
 /* eslint-disable import/extensions */
 
-import { Sentences } from '../models/types';
+import { Decorator, Sentences } from '../models/types';
 import {
   FIRST_SENTENCE_ID,
 } from '../models/constants';
+import { isSentenceType } from '../models/utils';
+
+const tabDecorator: Decorator = (content) => {
+    if (isSentenceType(content)) {
+        return content;
+    }
+    return `<b>${content}</b>`;
+};
 
 const DIVIDER = '<div style="width: 100%; border-bottom: solid 2px black; margin: 16px"/>';
 
@@ -11,40 +19,27 @@ const strtimeline: Sentences = {
     id: 'strtm',
     sentences: [
         {
-            id: 'strtmh-0-b',
-            content: '<b>Dec 1941</b>&nbsp;&nbsp;',
-            positions: {
-                0: { after: FIRST_SENTENCE_ID },
-            }
-        },
-        {
             id: 'strtmh-0',
             content: 'Dec 1941&nbsp;&nbsp;',
             positions: {
+                0: {
+                    after: FIRST_SENTENCE_ID,
+                    decorator: tabDecorator,
+                },
                 1: { after: FIRST_SENTENCE_ID },
                 2: { after: FIRST_SENTENCE_ID },
-            }
-        },
-        {
-            id: 'strtmh-1-b',
-            content: '<b>May 1942</b>&nbsp;&nbsp;',
-            positions: {
-                1: { after: 'strtmh-0' },
             }
         },
         {
             id: 'strtmh-1',
             content: 'May 1942&nbsp;&nbsp;',
             positions: {
-                0: { after: 'strtmh-0-b' },
+                0: { after: 'strtmh-0' },
+                1: {
+                    after: 'strtmh-0',
+                    decorator: tabDecorator,
+                },
                 2: { after: 'strtmh-0' },
-            }
-        },
-        {
-            id: 'strtmh-2-b',
-            content: '<b>Aug 1942</b>&nbsp;&nbsp;',
-            positions: {
-                2: { after: 'strtmh-1' },
             }
         },
         {
@@ -52,7 +47,11 @@ const strtimeline: Sentences = {
             content: 'Aug 1942&nbsp;&nbsp;',
             positions: {
                 0: { after: 'strtmh-1' },
-                1: { after: 'strtmh-1-b' },
+                1: { after: 'strtmh-1' },
+                2: {
+                    after: 'strtmh-1',
+                    decorator: tabDecorator,
+                },
             }
         },
         {
@@ -61,7 +60,7 @@ const strtimeline: Sentences = {
             positions: {
                 0: { after: 'strtmh-2' },
                 1: { after: 'strtmh-2' },
-                2: { after: 'strtmh-2-b' },
+                2: { after: 'strtmh-2' },
             }
         },
         {

@@ -44,6 +44,14 @@ export const Colors = [
         color: '#000000',
         bgColor: '#808000',
     },
+    {
+        color: '#000000',
+        bgColor: '#808000',
+    },
+    {
+        color: '#000000',
+        bgColor: '#808000',
+    },
 ],
 [
     {
@@ -61,6 +69,14 @@ export const Colors = [
     {
         color: '#000000',
         bgColor: '#ff6600',
+    },
+    {
+        color: '#000000',
+        bgColor: '#e65c00',
+    },
+    {
+        color: '#000000',
+        bgColor: '#e65c00',
     },
     {
         color: '#000000',
@@ -88,6 +104,14 @@ export const Colors = [
         color: '#000000',
         bgColor: '#00b300',
     },
+    {
+        color: '#000000',
+        bgColor: '#00b300',
+    },
+    {
+        color: '#000000',
+        bgColor: '#00b300',
+    },
 ],
 [
     {
@@ -101,6 +125,14 @@ export const Colors = [
     {
         color: '#000000',
         bgColor: '#33d6ff',
+    },
+    {
+        color: '#000000',
+        bgColor: '#00ccff',
+    },
+    {
+        color: '#000000',
+        bgColor: '#00ccff',
     },
     {
         color: '#000000',

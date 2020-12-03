@@ -9,14 +9,106 @@ import {
 // depth-sen
 
 const shahnamehpicturescarosel: Sentences = {
-  id: 'shahnamehpictures',
+  id: 'shahnamehpicturescarosel',
   sentences: [
     {
-      id: '3-0',
-      content: '<img src="/shahnameh00.jpg" style="width: 150px; height: 150px;"  alt=""  />',
+      id: '4-0',
+      content: '<img src="/shahnameh00.jpg" style="height: 150px;"  alt=""  />',
       positions: {
         0: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
+      id: '4-1',
+      content: '<img src="/shahnameh01.jpg" style="height: 150px;"  alt=""  />',
+      positions: {
+        0: { after: '4-0' },
         1: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
+      id: '4-2',
+      content: '<img src="/shahnameh02.jpg" style="height: 150px;"  alt=""  />',
+      positions: {
+        0: { after: '4-1' },
+        1: { after: '4-1' },
+        2: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
+      id: '4-3',
+      content: '<img src="/shahnameh03.jpg" style="height: 150px;"  alt=""  />',
+      positions: {
+        0: { after: '4-2' },
+        1: { after: '4-2' },
+        2: { after: '4-2' },
+        3: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
+      id: '4-4',
+      content: '<img src="/shahnameh04.jpg" style="height: 150px;"  alt=""  />',
+      positions: {
+        0: { after: '4-3' },
+        1: { after: '4-3' },
+        2: { after: '4-3' },
+        3: { after: '4-3' },
+        4: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
+      id: '4-5',
+      content: '<img src="/shahnameh05.jpg" style="height: 150px;"  alt=""  />',
+      positions: {
+        1: { after: '4-4' },
+        2: { after: '4-4' },
+        3: { after: '4-4' },
+        4: { after: '4-4' },
+        5: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
+      id: '4-6',
+      content: '<img src="/shahnameh06.jpg" style="height: 150px;"  alt=""  />',
+      positions: {
+        2: { after: '4-5' },
+        3: { after: '4-5' },
+        4: { after: '4-5' },
+        5: { after: '4-5' },
+        6: { after: FIRST_SENTENCE_ID },
+      }
+    },
+    {
+      id: '4-7',
+      content: '<img src="/shahnameh07.jpg" style="height: 150px;"  alt=""  />',
+      positions: {
+        3: { after: '4-6' },
+        4: { after: '4-6' },
+        5: { after: '4-6' },
+        6: { after: '4-6' },
+      }
+    },
+    {
+      id: '4-8',
+      content: '<img src="/shahnameh08.jpg" style="height: 150px;"  alt=""  />',
+      positions: {
+        4: { after: '4-7' },
+        5: { after: '4-7' },
+      }
+    },
+    {
+      id: '4-9',
+      content: '<img src="/shahnameh09.png" style="height: 150px;"  alt=""  />',
+      positions: {
+        5: { after: '4-8' },
+        6: { after: '4-7' },
+      }
+    },
+    {
+      id: '4-10',
+      content: '<img src="/shahnameh10.png" style="height: 150px;"  alt=""  />',
+      positions: {
+        6: { after: '4-9' },
       }
     },
   ]
@@ -30,7 +122,6 @@ const shahnamehpictures: Sentences = {
       content: '<img src="/shahnameh00.jpg" style="width: 200px; height: 200px;"  alt=""  />',
       positions: {
         0: { after: FIRST_SENTENCE_ID },
-        1: { after: FIRST_SENTENCE_ID },
       }
     },
   ]

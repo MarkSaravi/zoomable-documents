@@ -11,6 +11,7 @@ import news00 from './data/news00';
 import news01 from './data/news01';
 import news02 from './data/news02';
 import golang from './data/golang';
+import logo from './data/logo';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/colors" component={() => (<Zoomable sentences={colors} />)} />
           <Route path="/golang" component={() => (<Zoomable sentences={golang} />)} />
           <Route path="/farsi" component={() => (<Zoomable sentences={ferdowsi} />)} />
+          <Route path="/logo" component={() => (<Zoomable sentences={logo} />)} />
         </Switch>
       </BrowserRouter>
     </div>

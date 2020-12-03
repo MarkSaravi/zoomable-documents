@@ -23,18 +23,18 @@ function toHtml(s: string | Sentences) {
     return ReactHtmlParser(s as string);
 }
 
-function wrapInParagraph(paragraph:any[]) {
+function wrapInParagraph(paragraph: any[]) {
     return <p style={{ textAlign: 'left' }} key={uuidv4()}>{[...paragraph]}</p>;
 }
 
 function genParagraphs(
-        sentences: Sentences,
-        levels: SentencesLevels,
-        setZoomLevel: (id: string, zoomLevel: number) => void,
-        onMouseEntered: (e: React.MouseEvent<HTMLElement>) => void,
-        onMouseMoved: (e: React.MouseEvent<HTMLElement>) => void,
-        cursor: CursorType,
-    ) {
+    sentences: Sentences,
+    levels: SentencesLevels,
+    setZoomLevel: (id: string, zoomLevel: number) => void,
+    onMouseEntered: (e: React.MouseEvent<HTMLElement>) => void,
+    onMouseMoved: (e: React.MouseEvent<HTMLElement>) => void,
+    cursor: CursorType,
+) {
     const { id } = sentences;
     const { zoomLevel, maxLevel, depth } = levels[id];
     const levelSentences = getSentencesByZoomLevel(sentences, zoomLevel);
@@ -91,9 +91,9 @@ const Paragraphs: React.FC<Props> = (props: Props) => {
 
     const setMouseCursor = (event: React.MouseEvent<HTMLElement>) => {
         if (event.shiftKey && cursor !== 'zoom-out') {
-          setCursor('zoom-out');
+            setCursor('zoom-out');
         } else if (!event.shiftKey && cursor !== 'zoom-in') {
-          setCursor('zoom-in');
+            setCursor('zoom-in');
         }
     };
 
